@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BarcodeRestoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BarcodeProducts">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Barcode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isActive" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BoughtPacket">
+    <Key>
+      <PropertyRef Name="BoughtPacketId" />
+    </Key>
+    <Property Name="BoughtPacketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="InfoId" Type="int" Nullable="false" />
+    <Property Name="ReceiptImg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BoughtTime" Type="datetime" Nullable="false" />
+    <Property Name="BoughtIP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PacketType" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Note" Type="text" />
+  </EntityType>
+  <EntityType Name="Carriers">
+    <Key>
+      <PropertyRef Name="CarrierId" />
+    </Key>
+    <Property Name="CarrierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adress" Type="text" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuCategories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryImg" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuProducts">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductPrice" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MyCustomers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerImg" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WaiterId" Type="int" Nullable="false" />
+    <Property Name="TableId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Orders" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PacketInformations">
+    <Key>
+      <PropertyRef Name="InfoId" />
+    </Key>
+    <Property Name="InfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PacketType" Type="int" Nullable="false" />
+    <Property Name="PacketPrice" Type="int" Nullable="false" />
+    <Property Name="PacketName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PacketOrders">
+    <Key>
+      <PropertyRef Name="PacketOrderId" />
+    </Key>
+    <Property Name="PacketOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="CarrierId" Type="int" Nullable="false" />
+    <Property Name="Orders" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderStartingDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderEndDate" Type="datetime" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CardPaid" Type="nvarchar(max)" />
+    <Property Name="CashPaid" Type="nvarchar(max)" />
+    <Property Name="CustomerNote" Type="text" />
+  </EntityType>
+  <EntityType Name="Packets">
+    <Key>
+      <PropertyRef Name="PacketId" />
+    </Key>
+    <Property Name="PacketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="PacketType" Type="int" Nullable="false" />
+    <Property Name="RemainingUsageTime" Type="datetime" Nullable="false" />
+    <Property Name="DayStartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="DayEndTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesHistory">
+    <Key>
+      <PropertyRef Name="SalesHistoryId" />
+    </Key>
+    <Property Name="SalesHistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TotalCost" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Products" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CardPaid" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CashPaid" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableCategories">
+    <Key>
+      <PropertyRef Name="TableCategorieId" />
+    </Key>
+    <Property Name="TableCategorieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TableCategorieName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="TableId" />
+    </Key>
+    <Property Name="TableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TableCategorieId" Type="int" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Orders" Type="nvarchar(max)" />
+    <Property Name="OrderDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TableSalesHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="TableId" Type="int" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Orders" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderClosingDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderStartingDate" Type="datetime" Nullable="false" />
+    <Property Name="PaymentCash" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PaymentCard" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PaymentDiscount" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RemainingUsageTime" Type="datetime" Nullable="false" />
+    <Property Name="ConfirmCode" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Waiters">
+    <Key>
+      <PropertyRef Name="WaiterId" />
+    </Key>
+    <Property Name="WaiterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="NameSurname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BarcodeProducts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BarcodeProducts" Type="Self.BarcodeProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BarcodeProducts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BoughtPacket_PacketInformations">
+    <End Role="PacketInformations" Type="Self.PacketInformations" Multiplicity="1" />
+    <End Role="BoughtPacket" Type="Self.BoughtPacket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PacketInformations">
+        <PropertyRef Name="InfoId" />
+      </Principal>
+      <Dependent Role="BoughtPacket">
+        <PropertyRef Name="InfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BoughtPacket_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BoughtPacket" Type="Self.BoughtPacket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BoughtPacket">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Carriers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Carriers" Type="Self.Carriers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Carriers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuCategories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MenuCategories" Type="Self.MenuCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MenuCategories">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProducts_MenuCategories">
+    <End Role="MenuCategories" Type="Self.MenuCategories" Multiplicity="1" />
+    <End Role="MenuProducts" Type="Self.MenuProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuCategories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="MenuProducts">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProducts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MenuProducts" Type="Self.MenuProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MenuProducts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Waiters">
+    <End Role="Waiters" Type="Self.Waiters" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Waiters">
+        <PropertyRef Name="WaiterId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="WaiterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Carriers">
+    <End Role="Carriers" Type="Self.Carriers" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carriers">
+        <PropertyRef Name="CarrierId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="CarrierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Packets_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Packets" Type="Self.Packets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Packets">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesHistory_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SalesHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableCategories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TableCategories" Type="Self.TableCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TableCategories">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_TableCategories">
+    <End Role="TableCategories" Type="Self.TableCategories" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableCategories">
+        <PropertyRef Name="TableCategorieId" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="TableCategorieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableSalesHistory_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="TableSalesHistory" Type="Self.TableSalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableId" />
+      </Principal>
+      <Dependent Role="TableSalesHistory">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableSalesHistory_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TableSalesHistory" Type="Self.TableSalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TableSalesHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Waiters_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Waiters" Type="Self.Waiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Waiters">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BarcodeRestoDBModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BarcodeProducts" EntityType="Self.BarcodeProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BoughtPacket" EntityType="Self.BoughtPacket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carriers" EntityType="Self.Carriers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuCategories" EntityType="Self.MenuCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuProducts" EntityType="Self.MenuProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MyCustomers" EntityType="Self.MyCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PacketInformations" EntityType="Self.PacketInformations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PacketOrders" EntityType="Self.PacketOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Packets" EntityType="Self.Packets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalesHistory" EntityType="Self.SalesHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableCategories" EntityType="Self.TableCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableSalesHistory" EntityType="Self.TableSalesHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Waiters" EntityType="Self.Waiters" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BarcodeProducts_Users" Association="Self.FK_BarcodeProducts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BarcodeProducts" EntitySet="BarcodeProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BoughtPacket_PacketInformations" Association="Self.FK_BoughtPacket_PacketInformations">
+      <End Role="PacketInformations" EntitySet="PacketInformations" />
+      <End Role="BoughtPacket" EntitySet="BoughtPacket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BoughtPacket_Users" Association="Self.FK_BoughtPacket_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BoughtPacket" EntitySet="BoughtPacket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Carriers_Users" Association="Self.FK_Carriers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Carriers" EntitySet="Carriers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuCategories_Users" Association="Self.FK_MenuCategories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MenuCategories" EntitySet="MenuCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProducts_MenuCategories" Association="Self.FK_MenuProducts_MenuCategories">
+      <End Role="MenuCategories" EntitySet="MenuCategories" />
+      <End Role="MenuProducts" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProducts_Users" Association="Self.FK_MenuProducts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MenuProducts" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Tables" Association="Self.FK_Notifications_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Users" Association="Self.FK_Notifications_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Waiters" Association="Self.FK_Notifications_Waiters">
+      <End Role="Waiters" EntitySet="Waiters" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Carriers" Association="Self.FK_PacketOrders_Carriers">
+      <End Role="Carriers" EntitySet="Carriers" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Customers" Association="Self.FK_PacketOrders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Users" Association="Self.FK_PacketOrders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Packets_Users" Association="Self.FK_Packets_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Packets" EntitySet="Packets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesHistory_Users" Association="Self.FK_SalesHistory_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SalesHistory" EntitySet="SalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableCategories_Users" Association="Self.FK_TableCategories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TableCategories" EntitySet="TableCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_TableCategories" Association="Self.FK_Tables_TableCategories">
+      <End Role="TableCategories" EntitySet="TableCategories" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_Users" Association="Self.FK_Tables_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableSalesHistory_Tables" Association="Self.FK_TableSalesHistory_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="TableSalesHistory" EntitySet="TableSalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableSalesHistory_Users" Association="Self.FK_TableSalesHistory_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TableSalesHistory" EntitySet="TableSalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Waiters_Users" Association="Self.FK_Waiters_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Waiters" EntitySet="Waiters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

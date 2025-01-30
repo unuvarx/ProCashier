@@ -1,0 +1,161 @@
+﻿@model List<Barcode_Restaurant.Models.MyCustomers>
+@{
+    ViewBag.Title = "Anasayfa";
+}
+
+
+<link href="~/Content/Assets/Styles/styles.css" rel="stylesheet" />
+
+<main>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Barkod ve Adisyon Uygulamamıza</div>
+            <div class="masthead-heading text-uppercase">HOŞGELDİNİZ!</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">ÖN BİLGİ ALIN</a>
+        </div>
+    </header>
+
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading ">procashier.com.tr</h2>
+                <h3 class="section-subheading text-muted">Bir uygulamadan daha fazlası.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Barkod Sistemi</h4>
+                    <p class="text-muted">Barkod satış programımız barkodlu ürünlerin satışını kolaylaştıran bir otomasyon sistemidir.</p>
+                </div>
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Adisyon Sistemi</h4>
+                    <p class="text-muted">Adisyon programımız garson ve kurye hesaplarının olduğu masalardan ve paket sipariş alabileceğiniz bir otomasyon sistemidir.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section class="page-section" id="userGuide">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading ">7 GÜN ÜCRETSİZ DENEME</h2>
+                <h3 class="section-subheading text-muted">Kurulum Gerektirmez!</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/About/about1.png" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+
+                            <h4 class="subheading">Hızlı ve Güvenilir Üyelik</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Hızlı ve güvenli bir şekilde  <a href="/UserAuth/Register">buradan</a>  üye olabilirsiniz.</p></div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/About/about2.png" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+
+                            <h4 class="subheading">Hızlı Barkod Otomasyonu</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted"> Hızlı Barkod Otomasyonumuz sayesinde artık satışınız çok daha hızlı olacak ve karmaşadan kurtulacaksınız.  </p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/About/about3.png" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+
+                            <h4 class="subheading">Hızlı ve Sade Adisyon Otomasyonu</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Adisyon Otomasyonumuz çok sade ve anlaşılır bir deneyim sunar. İş yeriniz için hem zaman hem kolaylık avantajı sağlayacaktır.</p></div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/About/about4.png" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+
+                            <h4 class="subheading">procashier - kurye</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted"> Adisyon Otomasyonumuz için geliştirmiş olduğumuz procashier - kurye ile artık kurye karmaşasına son. </p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/About/about5.png" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+
+                            <h4 class="subheading">procashier - garson</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Adisyon Otomasyonumuz için geliştirmiş olduğumuz procashier - garson ile artık sipariş almak daha kolay.</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="~/Content/Assets/Images/logos/bestLogo.jpg" alt="..." /></div>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="customers" class="customersCarousel">
+        <h1>Müşterilerimiz</h1>
+
+        @if (Model != null && Model.Count > 0)
+        {
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <button id="circle" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@i" class="@(i == 0 ? "active" : "")" aria-label="Slide 3"></button>
+                    }
+                </div>
+                <div class="carousel-inner">
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        var item = Model[i];
+                        <div class="carousel-item @(i == 0 ? "active" : "") ">
+
+                            <img src="@item.CustomerImg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>@item.CustomerName</h5>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        }
+    </section>
+
+    <a href="https://wa.me/905365813398" class="whatsapp">
+        <img src="~/Content/Assets/Images/whatsapp.png" alt="Alternate Text" />
+    </a>
+
+</main>
+
+
+<script src="~/Content/Assets/Scripts/Home.js"></script>

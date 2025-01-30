@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Kurye Listesi";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+<link href="~/Content/Assets/Styles/Customers.css" rel="stylesheet" />
+<main>
+    <h3>Kurye Listesi</h3>
+
+    <div class="addCustomer">
+        <a href="/Carriers/AddCarrier">Kurye Ekle</a>
+
+    </div>
+
+    <div class="customersContainer">
+        <!-- Customers will be dynamically inserted here -->
+    </div>
+
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Carriers.js"></script>
+
+
+

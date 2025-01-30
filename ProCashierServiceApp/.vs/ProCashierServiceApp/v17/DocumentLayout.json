@@ -1,0 +1,48 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\ProCashierServiceApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0CC19D0-79FD-43EA-8B3D-CCC8B82D3B59}|ProCashierServiceApp.csproj|C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\ProCashierServiceApp\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B0CC19D0-79FD-43EA-8B3D-CCC8B82D3B59}|ProCashierServiceApp.csproj|solutionrelative:service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 3,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Service1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\ProCashierServiceApp\\Service1.cs",
+              "RelativeDocumentMoniker": "Service1.cs",
+              "ToolTip": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\ProCashierServiceApp\\Service1.cs [Design]",
+              "RelativeToolTip": "Service1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T06:57:05.855Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+﻿.addTableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+    .addTableContainer form {
+     
+       
+        max-width: 50rem;
+        width: 100%;
+    }
+.addTableContainer form div {
+    display: flex;
+    flex-direction: column;
+    
+}
+.addTableContainer form div input {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    outline: none;
+    padding: 0.5rem;
+   margin-bottom: 1rem;
+    width: 100%;
+}
+    .addTableContainer form div select {
+        border: 1px solid lightgray;
+        border-radius: 2px;
+        outline: none;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        color: red;
+    }
+.addTableContainer form button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    background-color: cornflowerblue;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.addTableContainer form .message {
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+    color: orange;
+}
+        .addTableContainer form button:hover {
+            background-color: lightgray;
+            color: cornflowerblue;
+        }
+
+
+h3 {
+    text-align: center;
+    margin: 2rem;
+}

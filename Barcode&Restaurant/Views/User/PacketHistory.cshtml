@@ -1,0 +1,82 @@
+﻿@model List<Barcode_Restaurant.Models.BoughtPacket>
+@{
+    ViewBag.Title = "Satın Alma Geçmişi";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/PacketHistory.css" rel="stylesheet" />
+<main>
+
+    <div class="myPackets">
+        <span>Satın Alma Geçmişi</span>
+    </div>
+
+    <div class="packetHistoryContainer">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Paket Adı</th>
+                    <th scope="col">Süresi</th>
+                    <th scope="col">Satın Alma Tarihi</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">Durumu</th>
+                    <th scope="col">Mesaj</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var packet in Model)
+                    {
+                        <tr>
+                            <td>@(packet.PacketType == 0 ? "Barkod" : "Adisyon")</td>
+                            <td>
+                                @if (ViewBag.PacketInformations != null)
+                                {
+                                    foreach (var info in ViewBag.PacketInformations)
+                                    {
+                                        if (info.InfoId == packet.InfoId)
+                                        {
+                                            <span>@info.PacketName</span>
+                                            break;
+                                        }
+                                    }
+                                }
+
+
+                            </td>
+                            
+                            <td>@packet.BoughtTime</td>
+                            <td>@packet.Price TL</td>
+                            <td id="statusTD">
+                                @if (packet.Status == 0)
+                                {
+                                    <span id="waiting">Bekliyor..</span>
+                                    <i class="fa fa-clock" aria-hidden="true"></i>
+
+                                }
+                                else if (packet.Status == 1)
+                                {
+                                    <span id="checking">Onaylandı</span>
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+
+                                }
+                                else
+                                {
+                                    <span id="warn">Reddedildi</span>
+                                    <i class="fa fa-exclamation" aria-hidden="true"></i>
+
+
+                                }
+
+                            </td>
+                            <td>@packet.Note</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</main>
+

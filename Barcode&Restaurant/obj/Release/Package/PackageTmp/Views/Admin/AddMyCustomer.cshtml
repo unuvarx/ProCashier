@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AddMyCustomer";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AdminAddPacket.css" rel="stylesheet" />
+<main>
+    <h2>Müşteri Ekle</h2>
+    <div class="addPacketContainer">
+        <form id="addMyCustomerForm" action="/Admin/AddMyCustomerReq" method="post" enctype="multipart/form-data">
+            <div>
+                <label>Müşteri Adı</label>
+                <input required autocomplete="off" type="text" name="customerName" value="" />
+            </div>
+            <div>
+                <label>Görsel</label>
+                <input required class="file" type="file" name="customerImg" value="" />
+            </div>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+            <button type="submit">Ekle</button>
+
+        </form>
+    </div>
+</main>
+

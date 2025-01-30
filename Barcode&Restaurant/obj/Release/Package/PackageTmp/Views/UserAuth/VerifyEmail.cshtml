@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Assets/Styles/VerifyEmail.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Email Doğrula</title>
+    <link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="loginContainer">
+        <div class="login">
+            <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+            <h1>Hesabını Aktif Et</h1>
+            <form action="/UserAuth/VerifyEmailReq" method="post">
+                @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                {
+                    <div>
+                        <label>E-Mail'e gelen kod</label>
+                        <input class="successMessage" required type="text" name="code" disabled value="@ViewBag.SuccessMessage" />
+                    </div>
+                    <a href="/UserAuth/Login"> Giriş Ekranına Dön </a>
+
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <div>
+                            <label>Code</label>
+                            <input class="errorMessage" required type="text" name="code" disabled value="@ViewBag.ErrorMessage" />
+                        </div>
+
+                        <a href="/UserAuth/Login"> Giriş Ekranına Dön </a>
+                    }
+                    else
+                    {
+                        <div>
+                            <label>E-Mail'e gelen kod</label>
+                            <input required type="text" name="code" value="" />
+                        </div>
+                        <button type="submit">Onayla</button>
+                    }
+
+                }
+
+            </form>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>

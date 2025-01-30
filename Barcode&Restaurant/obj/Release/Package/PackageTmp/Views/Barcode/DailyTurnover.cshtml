@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Günlük Ciro";
+    Layout = "~/Views/Shared/_BarcodeLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/SalesHistory.css" rel="stylesheet" />
+
+
+<main>
+    <div class="preloader">
+        <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+    </div>
+    <div class="title">
+        <span>Günlük Ciro</span>
+    </div>
+
+    <div class="historyFilter p-2">
+        <label>Ara</label>
+        <input type="date" name="date" value="" />
+    </div>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Tarih</th>
+
+                    <th>Ciro TL</th>
+                    <th>Kart TL</th>
+                    <th>Nakit TL</th>
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+            </tbody>
+        </table>
+        <div class="pagination">
+            <ul class="pagination-list">
+                <!-- Sayfa numaraları buraya eklenir -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sayfalama kontrolleri -->
+
+</main>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/DailyTurnover.js"></script>
+

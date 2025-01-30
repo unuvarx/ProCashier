@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Ürün Güncelle";
+    Layout = "~/Views/Shared/_BarcodeLayout.cshtml";
+}
+<link href="~/Content/Assets/Styles/AddProduct.css" rel="stylesheet" />
+<main>
+    <div class="title">
+        <span>Ürünü Düzenle</span>
+    </div>
+    <div class="AddProductContainer">
+        
+        @if (ViewBag.Product != null)
+        {
+            <form action="/Barcode/ProductUpdateReq" method="post">
+                <div>
+                    <label>Ürün Barkodu</label>
+                    <input required type="text" value="@ViewBag.Product.Barcode" name="barcode" id="barcode" />
+                </div>
+                <div>
+                    <label>Ürün Adı</label>
+                    <input required type="text" value="@ViewBag.Product.Name" name="name" id="name" />
+                </div>
+                <div>
+                    <label>Ürün Fiyatı</label>
+                    <input required type="text" value="@ViewBag.Product.Price" name="price" id="price" />
+                </div>
+
+
+                <div>
+                    <input type="hidden" name="id" value="@ViewBag.Product.ProductId" />
+                    <button type="submit" class="btn btn-success">Ürünü Güncelle</button>
+                </div>
+                
+                @if (ViewBag.UpdateMessage != null)
+                {
+                    <div class="alert alert-warning" role="alert">
+                        @ViewBag.UpdateMessage
+                    </div>
+                }
+            </form>
+        }
+    </div>
+</main>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AddProduct.js"></script>
+

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "UpdateWaiter";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddEmployee.css" rel="stylesheet" />
+<main>
+    <div class="addEmployeeContainer">
+        <h3>Garson Güncelle</h3>
+        @if (ViewBag.Waiter != null)
+        {
+            <form action="/Waiters/UpdateWaiterReq" method="post">
+                <input type="hidden" name="id" value="@ViewBag.Waiter.WaiterId" />
+                <div>
+                    <label>İsim Soyisim</label>
+                    <input type="text" name="nameSurname" value="@ViewBag.Waiter.NameSurname" />
+                </div>
+                <div>
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" name="username" value="@ViewBag.Waiter.Username" />
+                </div>
+                <div>
+                    <label>Şifre</label>
+                    <input type="text" name="password" value="@ViewBag.Waiter.Password" />
+                </div>
+
+                @if (!string.IsNullOrEmpty(ViewBag.Message))
+                {
+                    <div class="Message">@ViewBag.Message</div>
+                }
+                <button type="submit">Güncelle</button>
+            </form>
+        }
+    </div>
+</main>
+

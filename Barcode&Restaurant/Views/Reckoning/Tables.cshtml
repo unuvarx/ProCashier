@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "Satış";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+<link href="~/Content/Assets/Styles/Tables.css" rel="stylesheet" />
+<main>
+
+    <div class="notifications">
+        <button class="openNotifications">
+            <span class="notificationNumber"></span>
+            <i class="fa fa-bell "></i>
+        </button>
+    </div>
+    <div class="tableCategories">
+
+    </div>
+    <div class="tablesContainer">
+
+    </div>
+    @if (ViewBag.UserName != null)
+    {
+        <input type="hidden" name="UserName" value="@ViewBag.UserName" />
+    }
+    <div class="tableMenuContainer">
+        <div class="menuProcess">
+            <div class="title">
+                <span><label class="tableName"></label> </span>
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="content">
+                <button class="credit-card">
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                    <span>PARÇALI ÖDE</span>
+                </button>
+                <button class="pay-fastly">
+                    <i class="fa fa-bolt" aria-hidden="true"></i>
+                    <span>HIZLI ÖDE</span>
+                </button>
+                <button class="print-receipt">
+                    <i class="fa fa-print" aria-hidden="true"></i>
+                    <span>ADİSYON YAZDIR</span>
+                </button>
+                <button class="cancel-order">
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                    <span>İPTAL ET</span>
+                </button>
+
+                <button class="change-table">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                    <span>MASAYI TAŞI</span>
+                </button>
+                <button class="concat-additions">
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                    <span>ADİSYONLARI BİRLEŞTİR</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="PayModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span><label class="tableName">  </label> </span>
+                <label class="totalTitle">Toplam Tutar: <strong class="totalStrong">  </strong> </label>
+                <button class="completeBillBtn">Hesabı Kapat ve Yazdır</button>
+
+                <i class="fa fa-times close-icon-pay-modal" aria-hidden="true"></i>
+            </div>
+            <div class="numbersContainer">
+
+                <div class="table-orders">
+
+                </div>
+                <div class="numbers">
+                    <div class="calculate">
+                        <label>Kalan: <input class="remainder" type="text" disabled name="remainder" value="" /></label>
+                        <input placeholder="Ödenecek Tutar" type="text" class="payInput" name="payInput" value="" />
+                    </div>
+                    <div class="numberBtn">
+                        <div>
+                            <button>7</button>
+                            <button>8</button>
+                            <button>9</button>
+                        </div>
+
+                        <div>
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+                        </div>
+
+                        <div>
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                        </div>
+
+                        <div>
+                            <button>.</button>
+                            <button>0</button>
+                            <button id="angle-left">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-btn">
+                    <span class="payTypeTitle"> Ödeme Tipleri </span>
+                    <div>
+                        <button class="cash-btn">
+                            <img src="~/Content/Assets/Images/cash.png" alt="Alternate Text" />
+
+                        </button>
+                        <button class="card-btn">
+                            <img src="~/Content/Assets/Images/credit-card.png" alt="Alternate Text" />
+                        </button>
+                    </div>
+                    <button class="discount-btn">
+                        <img src="~/Content/Assets/Images/discount.png" alt="Alternate Text" />
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="PayFastlyModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span><label class="tableName">  </label> </span>
+                <label class="totalTitle">Toplam Tutar: <strong class="totalStrong">  </strong> </label>
+                <i class="fa fa-times close-icon-pay-fastly-modal" aria-hidden="true"></i>
+            </div>
+            <div class="pay-fastly-btn">
+                <div class="isPrint">
+                    <input type="checkbox" name="isPrinting" value="" />
+                    <label>Yazdır</label>
+                </div>
+                <div class="btns">
+                    <button class="fastly-cash">
+                        <span>Hızlı Nakit</span>
+                        <img src="~/Content/Assets/Images/cash.png" alt="Alternate Text" />
+                    </button>
+                    <button class="fastly-credit-card">
+                        <span>Hızlı Kredi Kartı</span>
+                        <img src="~/Content/Assets/Images/credit-card.png" alt="Alternate Text" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ChangeTableModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span><label class="tableName">  </label> </span>
+                <label class="totalTitle">Toplam Tutar: <strong class="totalStrong">  </strong> </label>
+                <i class="fa fa-times close-icon-change-table-modal" aria-hidden="true"></i>
+            </div>
+            <div class="selectTable">
+                <div class="select" name="tables">
+
+                </div>
+                <button class="change-table">
+                    <span>Değiştir</span>
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ConcatTablesModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span><label class="tableName">  </label> </span>
+                <label class="totalTitle">Toplam Tutar: <strong class="totalStrong">  </strong> </label>
+                <i class="fa fa-times close-icon-combine-table-modal" aria-hidden="true"></i>
+            </div>
+            <div class="content">
+                <div class="concat">
+
+
+                </div>
+                <button class="concatBtn">
+                    <span>Birleştir</span>
+                    <i class="fa fa-clipboard" aria-hidden="true"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="NotificationModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span>Garson Bildirimler </span>
+                <i class="fa fa-times close-icon-notification" aria-hidden="true"></i>
+            </div>
+            <button class="deleteAllNotifications">TÜMÜNÜ SİL</button>
+            <div class="content">
+                
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Tables.js"></script>
+
+

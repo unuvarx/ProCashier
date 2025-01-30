@@ -1,0 +1,69 @@
+﻿@model Barcode_Restaurant.Models.Tables
+@{
+    ViewBag.Title = "Masa Detayı";
+    Layout = null;
+}
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<link href="~/Content/Assets/Styles/TableDetail.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+<title>Masa Siparişi</title>
+<main>
+    @if (ViewBag.UserName != null)
+    {
+        <input type="hidden" name="UserName" value="@ViewBag.UserName" />
+    }
+    <input type="hidden" name="TableId" value="@Model.TableId" />
+    <input type="hidden" name="TableName" value="@Model.TableName" />
+    <input type="hidden" name="Orders" value="@Model.Orders" />
+    <div class="tableContainer">
+        <div class="orderContainer">
+            <div class="title">
+                <a href="/Reckoning/Tables" class="backBtn">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <button class="deleteTable">
+                    <i class="fa fa-trash"></i>
+                </button>
+                <a href="/Reckoning/EditTable/@Model.TableId" class="editTable">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                <span>
+                    @Model.TableName
+                </span>
+            </div>
+            <div class="orders">
+
+            </div>
+            <div class="foot">
+                <div>
+                    <span>Toplam Tutar</span>
+                    <label> 0TL </label>
+                </div>
+                <button class="save-btn">KAYDET</button>
+            </div>
+
+        </div>
+
+        <div class="menuContainer">
+            <div class="menuTitle">
+                @if (ViewBag.MenuCategories != null && ViewBag.MenuCategories.Count > 0)
+                {
+                    foreach (var item in ViewBag.MenuCategories)
+                    {
+                        <button class="categorieBtn" data-category-id="@item.CategoryId">@item.CategoryName</button>
+                    }
+                }
+            </div>
+            <div class="menuProducts">
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/TableDetail.js"></script>

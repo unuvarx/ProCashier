@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Assets/Styles/Auth.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Üye Ol</title>
+    <link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="preloader">
+        <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+    </div>
+    <div class="loginContainer">
+        <div class="login">
+            <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+            <h1>Üye Ol</h1>
+            <form action="/UserAuth/RegisterReq" method="post">
+                <div>
+                    <label>İşletme Adı</label>
+                    <input autocomplete="off" required type="text" name="name" value="" />
+                </div>
+
+                <div>
+                    <label>E-mail</label>
+                    <input autocomplete="off" required type="email" name="email" value="" />
+                </div>
+                <div>
+                    <label>Telefon Numarası</label>
+                    <input autocomplete="off" required type="text"  name="phoneNumber" id="phoneNumber" value="" />
+                </div>
+                <div>
+                    <label>Kullanıcı Adı</label>
+                    <input autocomplete="off" required type="text" maxlength="100" minlength="5" name="username" value="" />
+                </div>
+                <div>
+                    <label>Şifre</label>
+                    <input autocomplete="off" required type="password" name="password" maxlength="30" minlength="6" value="" />
+                </div>
+                <div>
+                    <label>Şifre - Tekrar</label>
+                    <input autocomplete="off" required type="password" name="password2" maxlength="30" minlength="6" value="" />
+                </div>
+                @if (ViewBag.GoogleSiteKey != null)
+                {
+                    <div>
+                        <div class="g-recaptcha" data-sitekey="@ViewBag.GoogleSiteKey"></div>
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="errorMessage">@ViewBag.ErrorMessage</div>
+                }
+                <button type="submit">Kayıt Ol</button>
+            </form>
+            <div class="register">
+                <a href="/UserAuth/Login">Zaten bir hesaba sahibim. Giriş Yap</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Content/Assets/Scripts/api.js" async defer></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Register.js"></script>

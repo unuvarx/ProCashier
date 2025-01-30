@@ -1,0 +1,129 @@
+﻿.addCustomer {
+    margin: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 435px) {
+    .addCustomer {
+        flex-direction: column;
+    }
+}
+.addCustomer a{
+    border: none;
+    border-radius: 4px;
+    background-color: cornflowerblue;
+    padding: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+.addCustomer input {
+    padding: 0.5rem;
+    width: 20rem;
+    font-size: 14px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid cornflowerblue;
+}
+@media screen and (max-width: 435px) {
+    .addCustomer input {
+       
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+h3 {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.customersContainer {
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.customersContainer .customer {
+   
+    border: 1px solid lightgray;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 1500px;
+}
+.customersContainer .customer .customerActions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+    .customersContainer .customer .customerActions button, .customersContainer .customer .customerActions a{
+        border: none;
+        border-radius: 4px;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .customersContainer .customer .customerActions button svg, .customersContainer .customer .customerActions a svg {
+            color: #fff;
+        }
+.customersContainer .customer .customerActions .edit {
+    background-color: orange;
+}
+.customersContainer .customer .customerActions .delete {
+    background-color: red;
+}
+.customersContainer .customer .customerName {
+    margin: 0.5rem 0;
+}
+.customersContainer .customer .customerName span {
+    font-weight: bold;
+}
+    .customersContainer .customer .customerPhone {
+        margin-bottom: 0.5rem;
+    }
+
+        .customersContainer .customer .customerPhone span {
+            font-weight: 500,
+        }
+
+
+    .customersContainer .customer .customerAdress {
+        margin-bottom: 0.5rem;
+    }
+
+        .customersContainer .customer .customerAdress span{
+            
+            font-size: 13px;
+        }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    width: 100%;
+    max-width: 1500px;
+   
+    margin: 0 auto;
+}
+.pagination .pagination-list {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+  
+   
+   
+   
+   
+}
+.pagination .pagination-list li {
+    list-style: none;
+}

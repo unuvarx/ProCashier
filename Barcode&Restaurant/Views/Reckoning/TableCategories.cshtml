@@ -1,0 +1,31 @@
+﻿@model List<Barcode_Restaurant.Models.TableCategories>
+@{
+    ViewBag.Title = "Masa Bölgeleri";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+<link href="~/Content/Assets/Styles/TableCategories.css" rel="stylesheet" />
+<main>
+    <h3>Masa Bölgeleri</h3>
+    <div class="categorieContainer">
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+                {
+                    <div class="categorie">
+                        <div class="title">
+                            <a href="/Reckoning/EditTableCategories/@item.TableCategorieId" class="edit-categorie"><i class="fa fa-pencil"></i></a>
+                            <button class="delete-categorie" data-categorie-id="@item.TableCategorieId"><i class="fa fa-trash"></i></button>
+                        </div>
+                        <div class="content">
+                            <span> @item.TableCategorieName </span>
+                        </div>
+                    </div>
+                }
+        }
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/TableCategories.js"></script>

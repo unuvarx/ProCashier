@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Bölge Ekle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddTable.css" rel="stylesheet" />
+<main>
+    <h3>Bölge Ekle</h3>
+    <div class="addTableContainer">
+        <form action="/Reckoning/AddTableCategorieReq" method="post">
+            <div>
+                <label>Bölge Adı</label>
+                <input required autocomplete="off" class="tableName" type="text" name="categoryName" value="" />
+            </div>
+            @if (ViewBag.Message != null)
+            {
+                <div class="message">
+                    <span>@ViewBag.Message</span>
+                </div>
+            }
+            <button type="submit">Bölgeyi Ekle</button>
+        </form>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AddTable.js"></script>
+

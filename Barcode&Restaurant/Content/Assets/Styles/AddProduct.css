@@ -1,0 +1,49 @@
+﻿.title {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+    .title span {
+        font-size: 3rem;
+    }
+
+
+.AddProductContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.AddProductContainer form {
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 4px;
+    width: 650px;
+}
+@media screen and (max-width:700px){
+    .AddProductContainer form {
+       
+        width: 90%;
+    }
+}
+.AddProductContainer form div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+    .AddProductContainer form div input {
+        outline: none;
+        border: none;
+        padding: 0.4rem 0.2rem;
+        border: 1px solid  #fff;
+       
+    }
+        .AddProductContainer form div input:focus {
+            border-color:cornflowerblue;
+            color: cornflowerblue;
+        }
+        .AddProductContainer form div button {
+            color: #fff;
+            margin-top: 1rem;
+        }

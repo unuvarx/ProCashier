@@ -1,0 +1,393 @@
+﻿.carrierName {
+    text-align: center;
+    margin: 1rem 0;
+}
+.ordersContainer {
+   
+    display: flex;
+    justify-content: center;
+}
+.ordersContainer .orders {
+    
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ordersContainer .orders .order {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    margin: 2rem;
+    width: 30rem;
+    border-radius: 4px;
+}
+.ordersContainer .orders .order .customerInfo {
+    display: flex;
+    flex-direction: column;
+}
+    .ordersContainer .orders .order .customerInfo #totalCost {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        
+    }
+.ordersContainer .orders .order .customerInfo #totalCost span {
+    font-size: 14px;
+}
+.ordersContainer .orders .order .customerInfo #totalCost label {
+    font-weight: 500;
+    color: red;
+    font-size: 15px;
+}
+
+    .ordersContainer .orders .order .customerInfo #name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+        .ordersContainer .orders .order .customerInfo #name span {
+            font-size: 13px;
+        }
+
+        .ordersContainer .orders .order .customerInfo #name label {
+            font-size: 15px;
+        }
+    .ordersContainer .orders .order .customerInfo #phone {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 0.5rem;
+
+    }
+    .ordersContainer .orders .order .customerInfo #phone span {
+        font-size: 13px;
+    }
+
+    .ordersContainer .orders .order .customerInfo #phone label {
+        
+        
+        font-size: 15px;
+    }
+.ordersContainer .orders .order .customerInfo #adress {
+    font-size: 13px;
+    margin-top: 0.5rem;
+}
+
+    .ordersContainer .orders .order #hr {
+        width: 100%;
+        height: 1px;
+        background-color: lightgray;
+        margin: 1rem 0;
+    }
+    .ordersContainer .orders .order .orderBtns {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ordersContainer .orders .order .orderBtns button {
+        width: 5rem;
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.25rem;
+        border: none;
+        border-radius: 4px;
+        margin: 0 0.5rem;
+        transition: all 0.1s;
+    }
+        .ordersContainer .orders .order .orderBtns button:hover {
+            transform: scale(1.1);
+        }
+        .ordersContainer .orders .order .orderBtns button span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+        }
+    .ordersContainer .orders .order .orderBtns button svg {
+        font-size: 15px;
+        color: #fff;
+    }
+    .ordersContainer .orders .order .orderBtns .pay {
+        background-color: darkseagreen;
+    }
+    .ordersContainer .orders .order .orderBtns .detail {
+        background-color: orangered;
+    }
+    .ordersContainer .orders .order .orderBtns .return {
+        background-color: darkred;
+    }
+
+
+
+
+
+
+
+
+
+.payModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.4);
+    display: none;
+}
+
+
+
+    .payModal .menuProcess {
+        background-color: #fff;
+        width: 50%;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+        .payModal .menuProcess .totalStrong {
+            color: red;
+            margin-left: 4px;
+        }
+
+        .payModal .menuProcess .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+            .payModal .menuProcess .title span {
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            .payModal .menuProcess .title svg {
+                font-size: 1.75rem;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            .payModal .menuProcess .close-icon {
+                transition: all 0.2s;
+            }
+            .payModal .menuProcess .close-icon:hover {
+                transform: scale(1.1)
+            }
+
+
+
+    .payModal .payForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+                .payModal .payForm #cash, .payModal .payForm #card {
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                    margin: 0.5rem 0;
+                    width: 15rem;
+                    
+                }
+
+                    .payModal .payForm #cash label, .payModal .payForm #card label {
+                        font-size: 14px;
+                        
+                    }
+                    .payModal .payForm #cash div, .payModal .payForm #card div {
+                        position: relative;
+
+                    }
+                    .payModal .payForm #cash div button, .payModal .payForm #card div button {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        border: none;
+                        
+                        height: 100%;
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                        background-color: cornflowerblue;
+                        color: #fff;
+
+                    }
+                    .payModal .payForm #cash div input, .payModal .payForm #card div input {
+                        padding: 0.5rem;
+                        border-radius: 4px;
+                        outline: none;
+                        border: 1px solid lightgray;
+                        width: 100%;
+                        font-size: 19px;
+
+                    }
+                    .payModal .payForm #cash div input:focus, .payModal .payForm #card div input:focus {
+                        border-color: cornflowerblue;
+                        color: cornflowerblue;
+                    }
+    .payModal .payForm .pay-order {
+        border: none;
+        background-color: darkseagreen;
+        color: #fff;
+        border-radius: 4px;
+        padding: 0.5rem;
+        width: 15rem;
+        margin-top: 2rem;
+        transition: all 0.2s;
+    }
+    .payModal .payForm .pay-order:hover {
+        color: darkseagreen;
+        background-color: #f1f1f1;
+    }
+
+
+
+
+
+
+
+.detailModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.4);
+    display: none;
+    
+}
+
+
+
+    .detailModal .menuProcess {
+        background-color: #fff;
+        width: 80%;
+        padding: 1rem;
+        border-radius: 4px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+        .detailModal .menuProcess::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .detailModal .menuProcess::-webkit-scrollbar-track {
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .detailModal .menuProcess::-webkit-scrollbar-thumb {
+            background-color: cornflowerblue;
+            border-radius: 10px;
+        }
+        .detailModal .menuProcess .totalStrong {
+            color: red;
+            margin-left: 4px;
+        }
+
+        .detailModal .menuProcess .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+            .detailModal .menuProcess .title span {
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            .detailModal .menuProcess .title svg {
+                font-size: 1.75rem;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+        .detailModal .menuProcess .close-icon {
+            transition: all 0.2s;
+        }
+
+            .detailModal .menuProcess .close-icon:hover {
+                transform: scale(1.1)
+            }
+
+
+
+
+    .detailModal .menuProcess .detailOrders {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+        .detailModal .menuProcess .order {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 0.5rem;
+            margin: 1rem;
+            width: 20rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .detailModal .menuProcess .order div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .detailModal .menuProcess .order span {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .detailModal .menuProcess .order label {
+            font-size: 13px;
+        }
+
+
+.waiterNav {
+    background-color: rgb(33, 37, 41) !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+    .waiterNav img {
+        width: 15rem;
+    }
+
+#search {
+    background: cornflowerblue;
+    border-radius: 4px;
+    max-width: 25rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+    #search input {
+    width: 100%;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    }
+    #search svg {
+     color: #fff;
+        padding: 0 0.5rem;
+    }

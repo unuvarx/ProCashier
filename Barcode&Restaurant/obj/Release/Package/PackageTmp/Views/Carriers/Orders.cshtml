@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/Styles/CarrierOrders.css" rel="stylesheet" />
+<title>procashier - kurye</title>
+<link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+<main>
+    <nav class="waiterNav">
+        <img src="~/Content/Assets/Images/logos/carrier.png" alt="Alternate Text" />
+
+    </nav>
+    <div id="search">
+        <input type="text" name="searchCustomer" class="searchCustomer" placeholder="Müşteri Adı Syoadı veya Telefon Numarası" value="" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+
+    </div>
+    <div class="ordersContainer">
+        <div class="orders">
+        </div>
+    </div>
+    <div class="payModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span>KALAN: <label class="totalCost">  </label> </span>
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="payForm">
+                <div id="cash">
+                    <label>Alınan Nakit Tutarı</label>
+                    <div>
+                        <input type="text" name="cashPaid" value="" />
+                        <button class="takeCash">AL</button>
+                    </div>
+                </div>
+                <div id="card">
+                    <label>Alınan Kart Tutarı</label>
+                    <div>
+                        <input type="text" name="cardPaid" value="" />
+                        <button class="takeCard">AL</button>
+                    </div>
+                </div>
+                <button class="pay-order">Ödemeyi Tamamla</button>
+            </div>
+        </div>
+    </div>
+    <div class="detailModal">
+        <div class="menuProcess">
+            <div class="title">
+                <span>TOPLAM: <label class="totalCost">  </label> </span>
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="detailOrders">
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/CarrierOrders.js"></script>

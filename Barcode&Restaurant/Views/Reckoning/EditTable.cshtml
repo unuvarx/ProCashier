@@ -1,0 +1,39 @@
+﻿@model Barcode_Restaurant.Models.Tables
+@{
+    ViewBag.Title = "Masa Güncelle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddTable.css" rel="stylesheet" />
+<main>
+    <h3>Masa Güncelle</h3>
+    <div class="addTableContainer">
+        @if (Model != null)
+        {
+            <form action="/Reckoning/EditTableReq" method="post">
+                <div>
+                    <label>Masa Adı</label>
+                    <input type="hidden" name="tableId" value="@Model.TableId" />
+                    <input type="hidden" name="tableCategorieId" value="@Model.TableCategorieId" />
+                    <input required autocomplete="off" class="tableName" type="text" name="tableName" value="@Model.TableName" />
+                </div>
+                <div>
+                    <label>Masa Bölgesi</label>
+                    <select required id="categorieSelect" name="tableCategoryId">
+                    </select>
+                </div>
+                @if (ViewBag.Message != null)
+                {
+                    <div class="message">
+                        <span>@ViewBag.Message</span>
+                    </div>
+                }
+                <button type="submit">Masayı Güncelle</button>
+            </form>
+        }
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AddTable.js"></script>
+

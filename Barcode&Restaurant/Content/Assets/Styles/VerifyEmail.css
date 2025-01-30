@@ -1,0 +1,99 @@
+﻿.loginContainer {
+    height: 100vh;
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+    .loginContainer .login {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Örnek bir gölge efekti */
+        width: 750px;
+    }
+
+@media screen and (max-width: 850px) {
+    .loginContainer .login {
+        width: 90%;
+    }
+}
+
+.loginContainer .login img {
+    width: 35%;
+}
+
+.loginContainer .login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+    .loginContainer .login form div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem
+    }
+
+        .loginContainer .login form div label {
+            font-size: 15px;
+        }
+
+        .loginContainer .login form div input {
+            border: 1px solid grey;
+            outline: none;
+            border-radius: 4px;
+            height: 2rem;
+        }
+
+.loginContainer .login button {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    background-color: cornflowerblue;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+    .loginContainer .login button:hover {
+        background-color: #3f51b5;
+    }
+.loginContainer .login a {
+  text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    background-color: cornflowerblue;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+    .loginContainer .login a:hover {
+        background-color: #3f51b5;
+    }
+
+.loginContainer .errorMessage {
+    font-size: 13px;
+    color: red;
+}
+.loginContainer .successMessage {
+    font-size: 13px;
+    color: green;
+}
+

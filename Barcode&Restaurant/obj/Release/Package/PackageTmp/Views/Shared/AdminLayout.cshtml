@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/Assets/Styles/AdminNavbar.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body id="top">
+
+    <div id="nav-bar">
+        <input id="nav-toggle" type="checkbox">
+        <div id="nav-header">
+            <a id="nav-title" href="/Admin/Home" target="_blank">PROCASHIER TR</a>
+            <label for="nav-toggle">
+                <span id="nav-toggle-burger"></span>
+            </label>
+            <hr>
+        </div>
+        <div id="nav-content">
+            <a href="/Admin/Home" class="nav-button"><i class="fa fa-home" aria-hidden="true"></i><span>Anasayfa</span></a>
+            <a href="/Admin/Users" class="nav-button"><i class="fa fa-users"></i><span>Kullanıcılar ve İşlemler</span></a>
+            <a href="/Admin/BarcodeUsers" class="nav-button"><i class="fa fa-barcode"></i><span>Barkod Kullanıcıları</span></a>
+            <a href="/Admin/AdditionUsers" class="nav-button"> <i class="fa fa-cutlery" aria-hidden="true"></i><span>Adisyon Kullanıcıları </span></a>
+            <a href="/Admin/Payments" class="nav-button"><i class="fa fa-briefcase"></i><span>Satın Alma İstekleri</span></a>
+            <a href="/Admin/PaymentsHistory" class="nav-button"><i class="fa fa-history"></i><span>Satın Alma Geçmişi</span></a>
+            <a href="/Admin/MyPackets" class="nav-button"><i class="fa fa-window-restore" aria-hidden="true"></i><span>Paketlerimiz</span></a>
+            <a href="/Admin/MyCustomers" class="nav-button"><i class="fa fa-area-chart"></i><span>Müşterilerimiz</span></a>
+            <div id="nav-content-highlight"></div>
+        </div>
+        <input id="nav-footer-toggle" type="checkbox">
+        <div id="nav-footer">
+            <div id="nav-footer-heading">
+                <div id="nav-footer-avatar">
+                    <img src="~/Content/Assets/Images/logos/pro.png">
+                </div>
+                <div id="nav-footer-titlebox">
+                    <a id="nav-footer-title" href="/Home/Index" target="_blank">Sefa&Taner</a>
+                    <span id="nav-footer-subtitle">Admins</span>
+                </div>
+                <label for="nav-footer-toggle"><i class="fa fa-angle-up"></i></label>
+            </div>
+            <div id="nav-footer-content">
+                procashier.com.tr yöneticileri
+            </div>
+        </div>
+    </div>
+
+    <div class="adminBody">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

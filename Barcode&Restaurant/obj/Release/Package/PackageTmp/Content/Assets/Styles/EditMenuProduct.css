@@ -1,0 +1,102 @@
+﻿.editProductContainer {
+    background-color: red;
+    
+    
+}
+
+    .editProductContainer form {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+      
+    }
+
+
+
+.editProductContainer form .input {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.editProductContainer form .ingredient .ingredients-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.editProductContainer form .ingredient svg {
+    background-color: red;
+    width: fit-content;
+    padding: 0.25rem;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.editProductContainer form .ingredient .ingredients-inputs input {
+    width: 7.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+}
+
+.editProductContainer form .input input {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 0.5rem;
+    outline: none;
+}
+
+    .editProductContainer form .input input:focus {
+        border-color: lightblue;
+    }
+
+.editProductContainer form .close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+    .editProductContainer form .close svg {
+        font-size: 2rem;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+        .editProductContainer form .close svg:hover {
+            transform: scale(1.2);
+        }
+
+.editProductContainer form .options .option {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px dotted lightgray;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.editProductContainer form .options .btn-warning {
+    font-size: 13px;
+    margin: 0.25rem 0;
+}
+
+.editProductContainer form .options .option label {
+    font-size: 13px;
+}
+
+.editProductContainer form .options .option div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.editProductContainer form .options input {
+    border-radius: 0px;
+    border: 1px solid #f0ad4e;
+    outline: none;
+}

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Günlük Rapor";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Daily.css" rel="stylesheet" />
+<main>
+    <div class="preloader">
+        <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+    </div>
+    <h3>Günlük Rapor</h3>
+    <div class="boxes">
+
+    </div>
+
+    <div class="orderChoice">
+        <button id="tableOrdersBtn" class="tableOrdersBtn">Masa Siparişleri</button>
+        <div class="hr">
+        </div>
+        <button id="packetOrdersBtn" class="packetOrdersBtn">Paket Siparişleri</button>
+    </div>
+    <div class="reportContainer">
+        <table class="table-orders table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Detay</th>
+                    <th scope="col">Masa</th>
+                    <th scope="col">Açılış</th>
+                    <th scope="col">Kapanış</th>
+                    <th scope="col">Kart</th>
+                    <th scope="col">Nakit</th>
+                    <th scope="col">İndirim</th>
+                    <th scope="col">Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <nav class="table-pagination" aria-label="Table pagination">
+            <ul class="pagination">
+                <!-- Pagination buttons will be dynamically added here -->
+            </ul>
+        </nav>
+    </div>
+
+    <div class="reportContainer">
+        <table class="packet-orders table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Detay</th>
+                    <th scope="col">Kurye</th>
+                    <th scope="col">Açılış</th>
+                    <th scope="col">Kapanış</th>
+
+                    <th scope="col">Kart</th>
+                    <th scope="col">Nakit</th>
+                    <th scope="col">Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+        <nav class="packet-pagination" aria-label="Packet pagination">
+            <ul class="pagination">
+                <!-- Pagination buttons will be dynamically added here -->
+            </ul>
+        </nav>
+
+    </div>
+
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Daily.js"></script>

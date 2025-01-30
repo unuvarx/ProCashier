@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Paketler";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+<link href="~/Content/Assets/Styles/Packets.css" rel="stylesheet" />
+
+<main>
+    <div class="myPackets">
+        <span>Paketler</span>
+    </div>
+    <div class="packets">
+
+        @if (ViewBag.BarcodePacket != null)
+        {
+            <div class="packet barcode">
+                <div class="title">
+                    <span class="packetName"> <img src="~/Content/Assets/Images/barkod.png" alt="Alternate Text" /> </span>
+                    <span class="status">
+                        <span class="circle @(ViewBag.BarcodeStatus == "Aktif" ? "circle-active" : "circle-inactive")"></span>
+                        <span>@ViewBag.BarcodeStatus</span>
+                    </span>
+                </div>
+                <div class="finishTime">
+                    <span class="finishTitle">Paket Bitiş Tarihi</span>
+                    <span class="date">
+                        @(ViewBag.BarcodeStatus == "Aktif" ? ViewBag.BarcodeFinishTime : Html.Raw("<a href='/User/BuyPacket'>Satın Al</a>"))
+                    </span>
+                </div>
+                <div class="dayTimes">
+                    <div class="startTime">
+                        <label for="barcodeStartSelect">Açılış</label>
+                        <select id="barcodeStartSelect" name="startTime">
+                            @foreach (var hour in Enumerable.Range(0, 24))
+                            {
+                                foreach (var minute in new[] { "00", "15", "30", "45" })
+                                {
+                                    var time = new TimeSpan(hour, int.Parse(minute), 0);
+                                    var isSelected = (time == (TimeSpan)ViewBag.BarcodePacket.DayStartTime) ? "selected" : "";
+                                    <option value="@time.ToString("hh\\:mm")" @isSelected>@time.ToString("hh\\:mm")</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="endTime">
+                        <label for="barcodeEndSelect">Kapanış</label>
+                        <select id="barcodeEndSelect" name="endTime">
+                            @foreach (var hour in Enumerable.Range(0, 24))
+                            {
+                                foreach (var minute in new[] { "00", "15", "30", "45" })
+                                {
+                                    var time = new TimeSpan(hour, int.Parse(minute), 0);
+                                    var isSelected = (time == (TimeSpan)ViewBag.BarcodePacket.DayEndTime) ? "selected" : "";
+                                    <option value="@time.ToString("hh\\:mm")" @isSelected>@time.ToString("hh\\:mm")</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <button id="barcodeUpdateButton" data-barcode-id="@ViewBag.BarcodePacket.PacketId">Güncelle</button>
+                </div>
+
+
+                <div class="link">
+                    <a href="/Barcode/Selling">BARKODA GİT</a>
+                </div>
+            </div>
+        }
+        @if (ViewBag.RestoPacket != null)
+        {
+            <div class="packet resto">
+                
+                <div class="title">
+                    <span class="packetName"> <img src="~/Content/Assets/Images/adisyon.png" alt="Alternate Text" /> </span>
+                    <span class="status">
+                        <span class="circle @(ViewBag.RestoStatus == "Aktif" ? "circle-active" : "circle-inactive")"></span>
+                        <span>@ViewBag.RestoStatus</span>
+                    </span>
+                </div>
+                <div class="finishTime">
+                    <span class="finishTitle">Paket Bitiş Tarihi</span>
+                    <span class="date">
+                        @(ViewBag.RestoStatus == "Aktif" ? ViewBag.RestoFinishTime : Html.Raw("<a href='/User/BuyPacket'>Satın Al</a>"))
+                    </span>
+                </div>
+                <div class="dayTimes">
+                    <div class="startTime">
+                        <label for="restoStartSelect">Açılış</label>
+                        <select id="restoStartSelect" name="startTime">
+                            @foreach (var hour in Enumerable.Range(0, 24))
+                            {
+                                foreach (var minute in new[] { "00", "15", "30", "45" })
+                                {
+                                    var time = new TimeSpan(hour, int.Parse(minute), 0);
+                                    var isSelected = (time == (TimeSpan)ViewBag.RestoPacket.DayStartTime) ? "selected" : "";
+                                    <option value="@time.ToString("hh\\:mm")" @isSelected>@time.ToString("hh\\:mm")</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="endTime">
+                        <label for="restoEndSelect">Kapanış</label>
+                        <select id="restoEndSelect" name="endTime">
+                            @foreach (var hour in Enumerable.Range(0, 24))
+                            {
+                                foreach (var minute in new[] { "00", "15", "30", "45" })
+                                {
+                                    var time = new TimeSpan(hour, int.Parse(minute), 0);
+                                    var isSelected = (time == (TimeSpan)ViewBag.RestoPacket.DayEndTime) ? "selected" : "";
+                                    <option value="@time.ToString("hh\\:mm")" @isSelected>@time.ToString("hh\\:mm")</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <button id="restoUpdateButton" data-resto-id="@ViewBag.RestoPacket.PacketId">Güncelle</button>
+                </div>
+                <div class="link">
+                    <a href="/Reckoning/Tables">ADİSYONA GİT</a>
+                </div>
+            </div>
+        }
+    </div>
+</main>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Packets.js"></script>

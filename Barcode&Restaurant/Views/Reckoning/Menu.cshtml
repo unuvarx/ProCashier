@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Menü";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+<link href="~/Content/Assets/Styles/FoodsAndDrinks.css" rel="stylesheet" />
+<main>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    <div class="tablesContainer">
+        <div class="tables">
+            @if (ViewBag.MenuCategories != null && ViewBag.MenuCategories.Count > 0)
+            {
+                foreach (var item in ViewBag.MenuCategories)
+                {
+                    <a href="/Reckoning/MenuCategories/@item.CategoryId" class="table">
+                        <img src="@item.CategoryImg" alt="Alternate Text" />
+                        <span>
+                            @item.CategoryName
+                        </span>
+                    </a>
+                }
+            }
+
+            <div class="addTable">
+                <button class="add-table-btn">  <span class="plus">+</span> <span>Kategori Ekle</span> </button>
+            </div>
+        </div>
+    </div>
+    <div class="addCategorie">
+        <form action="/Reckoning/AddCategorieReq" method="post" enctype="multipart/form-data">
+            <div class="close">
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="input">
+                <label>
+                    Kategori Adı
+                </label>
+                <input autocomplete="off"  maxlength="16" required type="text" name="name" id="category-name" value="" />
+            </div>
+            <div class="input">
+                <label>
+                    Kategori Resmi
+                </label>
+                <input required type="file" name="file" value=""
+                        accept=".jpg, .jpeg, .png"
+                       />
+            </div>
+            <button type="submit">Ekle</button>
+        </form>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/FoodsAndDrinks.js"></script>

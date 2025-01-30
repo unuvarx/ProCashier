@@ -1,0 +1,268 @@
+﻿.ordersContainer {
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+   
+}
+
+    .ordersContainer .waitingOrders, .ordersContainer .deliveryOrders {
+        overflow-y: auto;
+    }
+    .ordersContainer .waitingOrders {
+        box-shadow: rgba(0, 0, 0, 0.05) 1.95px 1.95px 2.6px 2.6px;
+        width: 50%;
+        height: 100%;
+
+        
+    }
+    .ordersContainer .deliveryOrders {
+        box-shadow: rgba(0, 0, 0, 0.05) 1.95px 1.95px 2.6px;
+        width: 50%;
+        height: 100%;
+       
+    }
+@media screen and (max-width: 750px) {
+    .ordersContainer {
+        flex-direction: column;
+    }
+        .ordersContainer .waitingOrders {
+            
+            width: 100%;
+            
+        }
+
+        .ordersContainer .deliveryOrders {
+          
+            width: 100%;
+           
+        }
+}
+    .ordersContainer .waitingOrders::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .ordersContainer .waitingOrders::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    .ordersContainer .waitingOrders::-webkit-scrollbar-thumb {
+        background-color: cornflowerblue;
+        border-radius: 10px;
+    }
+    .ordersContainer .deliveryOrders::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .ordersContainer .deliveryOrders::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    .ordersContainer .deliveryOrders::-webkit-scrollbar-thumb {
+        background-color: cornflowerblue;
+        border-radius: 10px;
+    }
+    .ordersContainer .title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.05) 1.95px 1.95px 2.6px;
+        padding: 0.5rem;
+    }
+    .ordersContainer .title img {
+        width: 4rem;
+        height: 4rem;
+    }
+    .ordersContainer .title span {
+        font-weight: 500;
+    }
+    .ordersContainer .order {
+        background-color: #f1f1f1;
+        margin: 2rem 0.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+        
+    }
+    .ordersContainer .order .orderTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .ordersContainer .order .orderTitle label {
+        font-size: 13px;
+    }
+    .ordersContainer .order .orderTitle span {
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .ordersContainer .order .orderDate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem 0;
+    }
+    .ordersContainer .order .orderDate span {
+        font-weight: bold;
+        font-size: 16px;
+        color: red;
+    }
+    .ordersContainer .order .orderBtns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .ordersContainer .order .orderBtns button {
+        border: none;
+        border-radius: 4px;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: cornflowerblue;
+        margin: 0.5rem;
+        transition: all 0.1s;
+    }
+    .ordersContainer .order .orderBtns button:hover {
+        transform: scale(1.1)
+    }
+        .ordersContainer .order .orderBtns button:hover svg{
+            transform: scale(1.1)
+        }
+    .ordersContainer .order .orderBtns button svg {
+        color: #fff;
+    }
+
+
+.infoModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.5);
+    display: none;
+
+}
+    .infoModal .modalContainer {
+        background-color: #fff;
+        padding: 1rem;
+        border-radius: 4px;
+        width: 85%;
+        max-width: 1000px;
+        height: 80vh;
+        overflow-y: auto;
+    }
+        .infoModal .modalContainer ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .infoModal .modalContainer ::-webkit-scrollbar-track {
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .infoModal .modalContainer ::-webkit-scrollbar-thumb {
+            background-color: cornflowerblue;
+            border-radius: 10px;
+        }
+
+.ordersContainer .deliveryOrders::-webkit-scrollbar {
+    width: 6px;
+}
+    .infoModal .modalContainer .modalTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .infoModal .modalContainer .modalTitle span {
+        font-size: 18px;
+    }
+    .infoModal .modalContainer .modalTitle .totalCost {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .infoModal .modalContainer .modalTitle .totalCost span {
+        font-size: 13px;
+        margin-right: 4px;
+    }
+    .infoModal .modalContainer .modalTitle .totalCost label {
+        font-weight: 500;
+        font-size: 14px;
+        color: red;
+    }
+    .infoModal .modalContainer .modalTitle svg {
+        font-size: 1.7rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .infoModal .modalContainer .modalTitle svg:hover {
+        transform: scale(1.1);
+    }
+
+
+        .infoModal .modalContainer .modalContent {
+            display: flex;
+            flex-direction: column;
+        }
+        .infoModal .modalContainer .modalContent .customerInfo {
+            display: flex;
+            flex-direction: column;
+            
+        }
+            .infoModal .modalContainer .modalContent .customerNoteTitle span {
+               font-size: 13px;
+            }
+        .infoModal .modalContainer .modalContent .customerInfo span {
+            font-size: 13px;
+        }
+        
+        .infoModal .modalContainer .modalContent .hr {
+            height: 1px;
+            background-color: lightgray;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .infoModal .modalContainer .modalContent .modalOrders {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+            .infoModal .modalContainer .modalContent .modalOrders .order {
+                display: flex;
+                flex-direction: column;
+                min-width: 250px;
+                padding: 0.5rem;
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                transition: all 0.2s;
+                margin-bottom: 1rem;
+            }
+                .infoModal .modalContainer .modalContent .modalOrders .order:hover {
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                }
+        .infoModal .modalContainer .modalContent .modalOrders .order span {
+            font-size: 13px;
+            color: cornflowerblue;
+            margin-right: 0.5rem;
+        }
+        .infoModal .modalContainer .modalContent .modalOrders .order label {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .infoModal .modalContainer .modalContent .modalOrders .order div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }

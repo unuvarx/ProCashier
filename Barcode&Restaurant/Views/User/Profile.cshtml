@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+<link href="~/Content/Assets/Styles/Profile.css" rel="stylesheet" />
+
+<main>
+    <div class="myPackets">
+        <span>Profil</span>
+    </div>
+    <div class="profileContainer">
+        <div class="profile">
+            <div>
+                <label>İşletme Adı</label>
+                <input type="text" disabled name="name" value="@ViewBag.User.Name" />
+            </div>
+            
+            <div>
+                <label>Telefon Numarası</label>
+                <input type="text" disabled name="phoneNumber" value="@ViewBag.User.PhoneNumber" />
+            </div>
+            <div>
+                <label>E-mail</label>
+                <input type="email" disabled name="email" value="@ViewBag.User.Email" />
+            </div>
+            <div>
+                <label>Kullanıcı Adı</label>
+                <input type="email" disabled name="email" value="@ViewBag.User.Username" />
+            </div>
+        </div>
+    </div>
+    
+</main>

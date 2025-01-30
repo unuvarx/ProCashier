@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BarcodeRestoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BarcodeProducts">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isActive" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_BarcodeProducts_Users" FromRole="BarcodeProducts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="BoughtPacket">
+    <Key>
+      <PropertyRef Name="BoughtPacketId" />
+    </Key>
+    <Property Name="BoughtPacketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="InfoId" Type="Int32" Nullable="false" />
+    <Property Name="ReceiptImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BoughtTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BoughtIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PacketType" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PacketInformations" Relationship="Self.FK_BoughtPacket_PacketInformations" FromRole="BoughtPacket" ToRole="PacketInformations" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_BoughtPacket_Users" FromRole="BoughtPacket" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Carriers">
+    <Key>
+      <PropertyRef Name="CarrierId" />
+    </Key>
+    <Property Name="CarrierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Carriers_Users" FromRole="Carriers" ToRole="Users" />
+    <NavigationProperty Name="PacketOrders" Relationship="Self.FK_PacketOrders_Carriers" FromRole="Carriers" ToRole="PacketOrders" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PacketOrders" Relationship="Self.FK_PacketOrders_Customers" FromRole="Customers" ToRole="PacketOrders" />
+  </EntityType>
+  <EntityType Name="MenuCategories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_MenuCategories_Users" FromRole="MenuCategories" ToRole="Users" />
+    <NavigationProperty Name="MenuProducts" Relationship="Self.FK_MenuProducts_MenuCategories" FromRole="MenuCategories" ToRole="MenuProducts" />
+  </EntityType>
+  <EntityType Name="MenuProducts">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductPrice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MenuCategories" Relationship="Self.FK_MenuProducts_MenuCategories" FromRole="MenuProducts" ToRole="MenuCategories" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_MenuProducts_Users" FromRole="MenuProducts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="MyCustomers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WaiterId" Type="Int32" Nullable="false" />
+    <Property Name="TableId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Orders" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Notifications_Tables" FromRole="Notifications" ToRole="Tables" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Notifications_Users" FromRole="Notifications" ToRole="Users" />
+    <NavigationProperty Name="Waiters" Relationship="Self.FK_Notifications_Waiters" FromRole="Notifications" ToRole="Waiters" />
+  </EntityType>
+  <EntityType Name="PacketInformations">
+    <Key>
+      <PropertyRef Name="InfoId" />
+    </Key>
+    <Property Name="InfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PacketType" Type="Int32" Nullable="false" />
+    <Property Name="PacketPrice" Type="Int32" Nullable="false" />
+    <Property Name="PacketName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BoughtPacket" Relationship="Self.FK_BoughtPacket_PacketInformations" FromRole="PacketInformations" ToRole="BoughtPacket" />
+  </EntityType>
+  <EntityType Name="PacketOrders">
+    <Key>
+      <PropertyRef Name="PacketOrderId" />
+    </Key>
+    <Property Name="PacketOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="CarrierId" Type="Int32" Nullable="false" />
+    <Property Name="Orders" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderStartingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderEndDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CardPaid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CashPaid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Carriers" Relationship="Self.FK_PacketOrders_Carriers" FromRole="PacketOrders" ToRole="Carriers" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_PacketOrders_Customers" FromRole="PacketOrders" ToRole="Customers" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_PacketOrders_Users" FromRole="PacketOrders" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Packets">
+    <Key>
+      <PropertyRef Name="PacketId" />
+    </Key>
+    <Property Name="PacketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PacketType" Type="Int32" Nullable="false" />
+    <Property Name="RemainingUsageTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DayStartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="DayEndTime" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Packets_Users" FromRole="Packets" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="SalesHistory">
+    <Key>
+      <PropertyRef Name="SalesHistoryId" />
+    </Key>
+    <Property Name="SalesHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TotalCost" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Products" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CardPaid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CashPaid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_SalesHistory_Users" FromRole="SalesHistory" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="TableCategories">
+    <Key>
+      <PropertyRef Name="TableCategorieId" />
+    </Key>
+    <Property Name="TableCategorieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TableCategorieName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_TableCategories_Users" FromRole="TableCategories" ToRole="Users" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Tables_TableCategories" FromRole="TableCategories" ToRole="Tables" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="TableId" />
+    </Key>
+    <Property Name="TableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TableCategorieId" Type="Int32" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Orders" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Tables" FromRole="Tables" ToRole="Notifications" />
+    <NavigationProperty Name="TableCategories" Relationship="Self.FK_Tables_TableCategories" FromRole="Tables" ToRole="TableCategories" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Tables_Users" FromRole="Tables" ToRole="Users" />
+    <NavigationProperty Name="TableSalesHistory" Relationship="Self.FK_TableSalesHistory_Tables" FromRole="Tables" ToRole="TableSalesHistory" />
+  </EntityType>
+  <EntityType Name="TableSalesHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TableId" Type="Int32" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Orders" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderClosingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderStartingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentCash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PaymentCard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PaymentDiscount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_TableSalesHistory_Tables" FromRole="TableSalesHistory" ToRole="Tables" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_TableSalesHistory_Users" FromRole="TableSalesHistory" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RemainingUsageTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ConfirmCode" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BarcodeProducts" Relationship="Self.FK_BarcodeProducts_Users" FromRole="Users" ToRole="BarcodeProducts" />
+    <NavigationProperty Name="BoughtPacket" Relationship="Self.FK_BoughtPacket_Users" FromRole="Users" ToRole="BoughtPacket" />
+    <NavigationProperty Name="Carriers" Relationship="Self.FK_Carriers_Users" FromRole="Users" ToRole="Carriers" />
+    <NavigationProperty Name="MenuCategories" Relationship="Self.FK_MenuCategories_Users" FromRole="Users" ToRole="MenuCategories" />
+    <NavigationProperty Name="MenuProducts" Relationship="Self.FK_MenuProducts_Users" FromRole="Users" ToRole="MenuProducts" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Users" FromRole="Users" ToRole="Notifications" />
+    <NavigationProperty Name="PacketOrders" Relationship="Self.FK_PacketOrders_Users" FromRole="Users" ToRole="PacketOrders" />
+    <NavigationProperty Name="Packets" Relationship="Self.FK_Packets_Users" FromRole="Users" ToRole="Packets" />
+    <NavigationProperty Name="SalesHistory" Relationship="Self.FK_SalesHistory_Users" FromRole="Users" ToRole="SalesHistory" />
+    <NavigationProperty Name="TableCategories" Relationship="Self.FK_TableCategories_Users" FromRole="Users" ToRole="TableCategories" />
+    <NavigationProperty Name="Tables" Relationship="Self.FK_Tables_Users" FromRole="Users" ToRole="Tables" />
+    <NavigationProperty Name="TableSalesHistory" Relationship="Self.FK_TableSalesHistory_Users" FromRole="Users" ToRole="TableSalesHistory" />
+    <NavigationProperty Name="Waiters" Relationship="Self.FK_Waiters_Users" FromRole="Users" ToRole="Waiters" />
+  </EntityType>
+  <EntityType Name="Waiters">
+    <Key>
+      <PropertyRef Name="WaiterId" />
+    </Key>
+    <Property Name="WaiterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="NameSurname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Notifications" Relationship="Self.FK_Notifications_Waiters" FromRole="Waiters" ToRole="Notifications" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Waiters_Users" FromRole="Waiters" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_BarcodeProducts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BarcodeProducts" Type="Self.BarcodeProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BarcodeProducts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BoughtPacket_PacketInformations">
+    <End Role="PacketInformations" Type="Self.PacketInformations" Multiplicity="1" />
+    <End Role="BoughtPacket" Type="Self.BoughtPacket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PacketInformations">
+        <PropertyRef Name="InfoId" />
+      </Principal>
+      <Dependent Role="BoughtPacket">
+        <PropertyRef Name="InfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BoughtPacket_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BoughtPacket" Type="Self.BoughtPacket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BoughtPacket">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Carriers_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Carriers" Type="Self.Carriers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Carriers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Carriers">
+    <End Role="Carriers" Type="Self.Carriers" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carriers">
+        <PropertyRef Name="CarrierId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="CarrierId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuCategories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MenuCategories" Type="Self.MenuCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MenuCategories">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProducts_MenuCategories">
+    <End Role="MenuCategories" Type="Self.MenuCategories" Multiplicity="1" />
+    <End Role="MenuProducts" Type="Self.MenuProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuCategories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="MenuProducts">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProducts_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="MenuProducts" Type="Self.MenuProducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MenuProducts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notifications_Waiters">
+    <End Role="Waiters" Type="Self.Waiters" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Waiters">
+        <PropertyRef Name="WaiterId" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="WaiterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PacketOrders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="PacketOrders" Type="Self.PacketOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PacketOrders">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Packets_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Packets" Type="Self.Packets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Packets">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesHistory_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="SalesHistory" Type="Self.SalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SalesHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableCategories_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TableCategories" Type="Self.TableCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TableCategories">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_TableCategories">
+    <End Role="TableCategories" Type="Self.TableCategories" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableCategories">
+        <PropertyRef Name="TableCategorieId" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="TableCategorieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tables_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableSalesHistory_Tables">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="TableSalesHistory" Type="Self.TableSalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableId" />
+      </Principal>
+      <Dependent Role="TableSalesHistory">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TableSalesHistory_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="TableSalesHistory" Type="Self.TableSalesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TableSalesHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Waiters_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Waiters" Type="Self.Waiters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Waiters">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BarcodeRestoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admins" />
+    <EntitySet Name="BarcodeProducts" EntityType="Self.BarcodeProducts" />
+    <EntitySet Name="BoughtPacket" EntityType="Self.BoughtPacket" />
+    <EntitySet Name="Carriers" EntityType="Self.Carriers" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="MenuCategories" EntityType="Self.MenuCategories" />
+    <EntitySet Name="MenuProducts" EntityType="Self.MenuProducts" />
+    <EntitySet Name="MyCustomers" EntityType="Self.MyCustomers" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <EntitySet Name="PacketInformations" EntityType="Self.PacketInformations" />
+    <EntitySet Name="PacketOrders" EntityType="Self.PacketOrders" />
+    <EntitySet Name="Packets" EntityType="Self.Packets" />
+    <EntitySet Name="SalesHistory" EntityType="Self.SalesHistory" />
+    <EntitySet Name="TableCategories" EntityType="Self.TableCategories" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" />
+    <EntitySet Name="TableSalesHistory" EntityType="Self.TableSalesHistory" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Waiters" EntityType="Self.Waiters" />
+    <AssociationSet Name="FK_BarcodeProducts_Users" Association="Self.FK_BarcodeProducts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BarcodeProducts" EntitySet="BarcodeProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BoughtPacket_PacketInformations" Association="Self.FK_BoughtPacket_PacketInformations">
+      <End Role="PacketInformations" EntitySet="PacketInformations" />
+      <End Role="BoughtPacket" EntitySet="BoughtPacket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BoughtPacket_Users" Association="Self.FK_BoughtPacket_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BoughtPacket" EntitySet="BoughtPacket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Carriers_Users" Association="Self.FK_Carriers_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Carriers" EntitySet="Carriers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Carriers" Association="Self.FK_PacketOrders_Carriers">
+      <End Role="Carriers" EntitySet="Carriers" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Customers" Association="Self.FK_PacketOrders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuCategories_Users" Association="Self.FK_MenuCategories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MenuCategories" EntitySet="MenuCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProducts_MenuCategories" Association="Self.FK_MenuProducts_MenuCategories">
+      <End Role="MenuCategories" EntitySet="MenuCategories" />
+      <End Role="MenuProducts" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProducts_Users" Association="Self.FK_MenuProducts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MenuProducts" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Tables" Association="Self.FK_Notifications_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Users" Association="Self.FK_Notifications_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notifications_Waiters" Association="Self.FK_Notifications_Waiters">
+      <End Role="Waiters" EntitySet="Waiters" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PacketOrders_Users" Association="Self.FK_PacketOrders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="PacketOrders" EntitySet="PacketOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Packets_Users" Association="Self.FK_Packets_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Packets" EntitySet="Packets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesHistory_Users" Association="Self.FK_SalesHistory_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SalesHistory" EntitySet="SalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableCategories_Users" Association="Self.FK_TableCategories_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TableCategories" EntitySet="TableCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_TableCategories" Association="Self.FK_Tables_TableCategories">
+      <End Role="TableCategories" EntitySet="TableCategories" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tables_Users" Association="Self.FK_Tables_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableSalesHistory_Tables" Association="Self.FK_TableSalesHistory_Tables">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="TableSalesHistory" EntitySet="TableSalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TableSalesHistory_Users" Association="Self.FK_TableSalesHistory_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="TableSalesHistory" EntitySet="TableSalesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Waiters_Users" Association="Self.FK_Waiters_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Waiters" EntitySet="Waiters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

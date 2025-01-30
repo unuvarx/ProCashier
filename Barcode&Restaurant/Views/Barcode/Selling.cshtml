@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Satış Yap";
+    Layout = "~/Views/Shared/_BarcodeLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Selling.css" rel="stylesheet" />
+
+
+<main>
+    @if (ViewBag.UserName != null)
+            {
+                <input type="hidden" name="UserName" value="@ViewBag.UserName" />
+            }
+    <audio id="beep" src="~/Content/Assets/beep.mp3"></audio>
+    <audio id="notFound" src="~/Content/Assets/notFound.mp3"></audio>
+    <div class="sellingContainer">
+        <div class="head">
+            <div class="search">
+                <input autocomplete="off" type="text" placeholder="ÜRÜN BARKODUNU GİRİNİZ" name="barcode" id="barcode" value="" />
+                <button class="searchProduct"> <img src="~/Content/Assets/Images/search.png" alt="Alternate Text" /> <span>Ara</span> </button>
+                <button class="printBtn"><i class="fa fa-print" aria-hidden="true"></i></button>
+            </div>
+            <div class="response">
+                <div>
+                    <label>Ödenen (TL)</label>
+                    <input autocomplete="off" type="text" placeholder="00.00" name="paid" id="paid" value="" />
+                </div>
+                <div>
+                    <label>Tutar (TL)</label>
+                    <input disabled type="text" name="cost" id="cost" value="" />
+                </div>
+                <div>
+                    <label>Para Üstü (TL)</label>
+                    <input disabled type="text" name="change" id="change" value="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="completeSell">
+            <div class="payBtns">
+                <button class="cashPaid">NAKİT (F8)</button>
+                <button class="cardPaid">KART (F9)</button>
+            </div>
+            <a href="/Barcode/Selling" target="_blank" class="newCustomerBtn">YENİ MÜŞTERİ</a>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead class="tableHead">
+                    <tr>
+                        <th><button class="trash"><img src="~/Content/Assets/Images/trash.png" alt="Alternate Text" /></button></th>
+                        <th>Barkod</th>
+                        <th>Ürün</th>
+                        <th>Miktar</th>
+                        <th>Fiyat</th>
+                        <th>Tutar</th>
+                        <th class="isUpdate">Kalıcı olarak <br /> güncellensin mi?</th>
+                    </tr>
+                </thead>
+                <tbody class="tableBody">
+
+
+                <tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="AddProductModal">
+        <div class="addContainer">
+            <div class="title">
+                <h5>Hızlı Ekle</h5>
+                <button class="exitModal"><img src="~/Content/Assets/Images/x.jpg" alt="Alternate Text" /></button>
+            </div>
+            <form id="addProductForm">
+                <div>
+                    <label>Ürün Barkodu</label>
+                    <input autocomplete="off" disabled required type="text" name="barcode" id="modalBarcode" />
+                </div>
+                <div>
+                    <label>Ürün Adı</label>
+                    <input autocomplete="off" required type="text" name="name" id="modalName" />
+                </div>
+                <div>
+                    <label>Ürün Fiyatı</label>
+                    <input autocomplete="off" required type="text" name="price" id="modalPrice" placeholder="00.00" />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info addProductBtn">Ürünü Ekle</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="SuccessMessageModal">
+        <div class="head">
+            <img src="~/Content/Assets/Images/navbar-logo.svg" alt="Alternate Text" />
+            <span>barcoderesto.com</span>
+        </div>
+        <hr />
+        <div class="content">
+            Satış işleminiz başarılı bir şekilde gerçekleşti.
+            Bol kazançlar dileriz :)
+        </div>
+    </div>
+    <div class="ErrorMessageModal">
+        <div class="head">
+            <img src="~/Content/Assets/Images/navbar-logo.svg" alt="Alternate Text" />
+            <span>barcoderesto.com</span>
+        </div>
+        <hr />
+        <div class="content">
+            Satış işleminiz sırasında bir sorun ile karşılaşıldı :(
+
+        </div>
+    </div>
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Selling.js"></script>

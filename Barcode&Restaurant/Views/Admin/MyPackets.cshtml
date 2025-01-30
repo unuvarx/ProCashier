@@ -1,0 +1,42 @@
+﻿@model List<Barcode_Restaurant.Models.PacketInformations>
+@{
+    ViewBag.Title = "MyPackets";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AdminAddPacket.css" rel="stylesheet" />
+<main>
+    <h2>Paketlerimiz</h2>
+    <a class="btn btn-primary" href="/Admin/AddPacket"> Paket Ekle </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Paket Tipi</th>
+                <th scope="col">Fiyatı</th>
+                <th scope="col">Süresi</th>
+                <th scope="col">Sil</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@(item.PacketType == 0 ? "Barkod" :  "Adisyon")</td>
+                        <td>@item.PacketPrice TL</td>
+                        <td>@item.PacketName</td>
+                        <td>
+                            <form  id="deleteForm" action="/Admin/DeletePacketReq" method="post">
+                                <input type="hidden" name="infoId" value="@item.InfoId" />
+                                <button type="submit">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</main>
+

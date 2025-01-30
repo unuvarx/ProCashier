@@ -1,0 +1,33 @@
+﻿@model Barcode_Restaurant.Models.TableCategories
+@{
+    ViewBag.Title = "Bölge Güncelle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddTable.css" rel="stylesheet" />
+<main>
+    <h3>Bölge Güncelle</h3>
+    <div class="addTableContainer">
+        @if (Model != null)
+        {
+            <form action="/Reckoning/EditTableCategoriesReq" method="post">
+                <div>
+                    <label>Bölge Adı</label>
+                    <input type="hidden" name="tableCategorieId" value="@Model.TableCategorieId" />
+                    <input required autocomplete="off" class="tableName" type="text" name="tableCategorieName" value="@Model.TableCategorieName" />
+                </div>
+                @if (ViewBag.Message != null)
+                {
+                    <div class="message">
+                        <span>@ViewBag.Message</span>
+                    </div>
+                }
+                <button type="submit">Bölgeyi Güncelle</button>
+            </form>
+        }
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AddTable.js"></script>
+

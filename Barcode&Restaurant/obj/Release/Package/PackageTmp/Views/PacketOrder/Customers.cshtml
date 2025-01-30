@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Kayıtlı Müşteriler";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Customers.css" rel="stylesheet" />
+
+<main>
+    <h3>Kayıtlı Müşteriler</h3>
+
+    <div class="addCustomer">
+        <a href="/PacketOrder/AddCustomer">Müşteri Ekle</a>
+        <input type="text" name="findCustomer" placeholder="Müşteri Ad Soyad veya Telefon Numarası" value="" />
+    </div>
+    <div class="pagination">
+        <ul class="pagination-list">
+            <!-- Pagination links will be dynamically inserted here -->
+        </ul>
+    </div>
+    <div class="customersContainer">
+        <!-- Customers will be dynamically inserted here -->
+    </div>
+
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Customers.js"></script>

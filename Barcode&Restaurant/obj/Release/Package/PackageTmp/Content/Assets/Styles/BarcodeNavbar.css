@@ -1,0 +1,116 @@
+﻿.navbar {
+    background-color: rgb(33, 37, 41) !important;
+}
+
+    .navbar .container .navbarLogo {
+        text-decoration: none;
+        width: 10rem;
+        height: 5rem;
+        margin-right: 1rem;
+    }
+
+        .navbar .container .navbarLogo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+@media screen and (max-width: 1024px) {
+
+
+    .navbar .container .navbarLogo {
+        margin-right: 0;
+    }
+}
+
+.navbar .return-btn {
+    width: 2rem;
+    height: 2rem;
+}
+
+    .navbar .return-btn a {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+    }
+
+        .navbar .return-btn a img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+            .navbar .return-btn a img:hover {
+                transform: scale(1.1);
+            }
+
+.footer-container {
+    
+  
+}
+
+.demo-dropdown {
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 0.5rem;
+
+}
+@media screen and (max-width: 1200px) {
+    .demo-dropdown {
+        position: relative;
+        
+       padding: 0.5rem 0;
+       display: block;
+        
+    }
+}
+.drop {
+    text-decoration: none;
+    color: var(--bs-nav-link-color);
+    cursor: pointer;
+}
+.reports {
+    display: none;
+    background-color: rgb(33, 37, 41);
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    z-index: 999999999999999999999999999999;
+}     
+
+.reports2 {
+    z-index: 9999999999999999999999999999999;
+}
+   
+.drop:hover  {              
+    color: #fff;
+}
+
+
+.reports li {
+    width: 10rem;
+}
+
+.warnMessage {
+    background-color: lightcoral;
+    color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+
+}
+.warnMessage a {
+    text-decoration: none;
+    margin-left: 8px;
+}

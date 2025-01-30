@@ -1,0 +1,62 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    overflow-x: hidden;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+
+.preloader {
+    padding: 2rem;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529 !important;
+    opacity: 0.9;
+    display: none;
+}
+    .preloader img {
+        width: 20rem;
+        animation: rotate 2s linear infinite;
+    }
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg); /* Başlangıçta 0 derece döndürme */
+    }
+
+    to {
+        transform: rotateY(360deg); /* 360 dereceye kadar y ekseni etrafında döndürme */
+    }
+}
+
+.contactInfo {
+    display: flex !important;
+    justify-content: center;
+}
+.contactInfo div {
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+}
+    .contactInfo div svg {
+        margin-right: 0.25rem;
+    }

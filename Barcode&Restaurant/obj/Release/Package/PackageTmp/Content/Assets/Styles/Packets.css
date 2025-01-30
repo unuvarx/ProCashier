@@ -1,0 +1,161 @@
+﻿.myPackets {
+
+    text-align: center;
+    margin-top: 4rem;
+}
+    .myPackets span {
+        font-size: 3rem;
+       
+    }
+
+    .packets {
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+.packets .packet {
+    
+    padding: 2rem;
+    min-width: 30rem;
+    border-radius: 8px;
+    margin: 3rem;
+   
+}
+@media screen and (max-width: 538px) 
+{
+    .packets .packet{
+   
+    min-width: 100%;
+    
+}
+    }
+.packets .barcode {
+    background-color: #ff5757;
+}
+.packets .resto {
+    background-color: #5271ff;
+} 
+.packets .packet .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+    .packets .packet .title .packetName {
+        width: 17.5rem;   
+    }
+       
+        .packets .packet .title .packetName img {
+            width: 100%;
+        }
+
+    .packets .packet .title .status {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .packets .packet .title .status span {
+            color: #fff;
+        }
+        .packets .packet .title .status .circle {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+            
+            .packets .packet .title .status .circle-active {
+                background-color: #00FF00;
+            }
+        .packets .packet .title .status .circle-inactive {
+            background-color: #FF0000;
+        }
+
+
+
+    .packets .packet .finishTime {
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .finishTime .finishTitle {
+        font-size: 18px;
+        color: #fff;
+
+    }
+    .packets .packet .finishTime .date {
+        font-weight: bold;
+        color: #fff;
+    }
+    .packets .packet .link {
+        margin-top: 2rem
+    }
+        .packets .packet .link a {
+            transition: all 0.3s;
+            color: blue;
+            background-color: #fff;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 4px;
+            color: #303030;
+            font-weight: 500;
+            width: 100%;
+            background-color: #ffcd4d;
+            color: #303030;
+            font-size: 20px
+        }
+        .packets .packet .link a:hover {
+            background-color: #ffcd4d;
+            color: #fff;
+        }
+.packets .packet .dayTimes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:  center;
+    justify-content: flex-start;
+}
+.packets .packet .dayTimes .startTime {
+    display: flex;
+    flex-direction: column;
+}
+.packets .packet .dayTimes .startTime label {
+    font-size: 15px;
+    color: #fff;
+}
+    .packets .packet .dayTimes .endTime {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    }
+        .packets .packet .dayTimes .endTime label {
+            font-size: 15px;
+            color: #fff;s
+        }
+.packets .packet .dayTimes select {
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+
+    .packets .packet .dayTimes button {
+        border: none;
+        border-radius: 2px;
+        font-size: 14px;
+        margin: 0 auto;
+        margin-top: 0.75rem;
+        padding: 0.5rem 2rem;
+        color: cornflowerblue;
+       
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+       border-radius: 4px;
+        background-color: #ff8a00;
+        color: #fff;
+        visibility: hidden;
+    }

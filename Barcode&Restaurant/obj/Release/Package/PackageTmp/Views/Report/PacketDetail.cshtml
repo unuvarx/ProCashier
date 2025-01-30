@@ -1,0 +1,46 @@
+﻿@model Barcode_Restaurant.Models.PacketOrders
+
+
+@{
+    ViewBag.Title = "Paket Detayları";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+
+<link href="~/Content/Assets/Styles/ReportDetail.css" rel="stylesheet" />
+<main>
+    <div class="boxes">
+
+    </div>
+    <div class="detail-container">
+
+        <input type="hidden" name="ordersInput" value="@Model.Orders" />
+        <input type="hidden" name="paymentCash" value="@Model.CashPaid" />
+        <input type="hidden" name="paymentCard" value="@Model.CardPaid" />
+        @if (ViewBag.Carrier != null)
+        {
+            <input type="hidden" name="carrier" value="@ViewBag.Carrier" />
+        }
+        @if (ViewBag.Customer != null)
+        {
+            <input type="hidden" name="customer" value="@ViewBag.Customer" />
+        }
+
+        
+        <div class="times">
+            <span>Açılış Tarihi: @Model.OrderStartingDate</span>
+            <span>Kapanış Tarihi: @Model.OrderEndDate</span>
+        </div>
+
+        <div class="ordersContainer">
+            <h5>-ADİSYON-</h5>
+            <div class="orders">
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/ReportDetail.js"></script>

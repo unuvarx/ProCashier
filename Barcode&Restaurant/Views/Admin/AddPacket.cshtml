@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AddPacket";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AdminAddPacket.css" rel="stylesheet" />
+<main>
+    <h2>Paket Ekle</h2>
+    <div class="addPacketContainer">
+        <form id="addPacketForm" action="/Admin/AddPacketReq" method="post">
+            <div>
+                <label>Packet</label>
+                <select required name="packetType">
+                    <option value="0">Barkod</option>
+                    <option value="1">Adisyon</option>
+                </select>
+            </div>
+            <div>
+                <label> Fİyatı</label>
+                <input required type="number" name="packetPrice" value="" />
+            </div>
+            <div>
+                <label>Paket Süresi</label>
+                <input type="text"   value="1 Yıl" disabled />
+            </div>
+            <button type="submit">Paketi Ekle</button>
+
+        </form>
+    </div>
+</main>

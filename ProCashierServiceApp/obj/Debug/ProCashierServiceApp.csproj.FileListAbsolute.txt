@@ -1,0 +1,12 @@
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\bin\Debug\ProCashierServiceApp.exe.config
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\bin\Debug\ProCashierServiceApp.exe
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\bin\Debug\ProCashierServiceApp.pdb
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.csproj.AssemblyReference.cache
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.ProjectInstaller.resources
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.csproj.GenerateResource.cache
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.csproj.CoreCompileInputs.cache
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashi.D1BEE657.Up2Date
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.exe
+C:\Users\Sefa\Documents\SOFTWARE\Projeler\ProCashierServiceApp\obj\Debug\ProCashierServiceApp.pdb

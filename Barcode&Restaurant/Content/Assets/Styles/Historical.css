@@ -1,0 +1,71 @@
+﻿.orderChoice .active {
+    border-color: cornflowerblue;
+    color: cornflowerblue;
+}
+
+.table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.packet-pagination {
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+    .title label {
+        margin-left: 4px;
+        font-weight: 500;
+      
+    }
+    
+
+.orderChoice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .orderChoice .hr {
+        width: 1.5px;
+        height: 2rem;
+        background-color: lightgray;
+    }
+
+    .orderChoice button {
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+        margin: 2rem;
+    }
+
+
+
+@media (max-width: 661px) {
+    .reportContainer {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Mobil cihazlarda kaydırma pürüzsüzlüğü için */
+    }
+
+    table {
+        min-width: 600px; /* Tabloyu dar ekranlarda da kaydırılabilir hale getirmek için bir minimum genişlik ayarlayın */
+    }
+}
+
+
+
+#cancelOrder {
+    background-color: lightcoral;
+}

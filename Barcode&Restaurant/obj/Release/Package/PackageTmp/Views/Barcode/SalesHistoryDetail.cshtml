@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Satış Geçmişi Detayı";
+    Layout = "~/Views/Shared/_BarcodeLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/SalesHistoryDetail.css" rel="stylesheet" />
+
+
+<main>
+    @if (ViewBag.SalesHistoryId != null)
+    {
+        <input type="hidden" name="id" id="historyId" value="@ViewBag.SalesHistoryId" />
+    }
+
+    <div class="title">
+        <span>Satış Geçmişi Detayı</span>
+    </div>
+
+
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Barkod</th>
+                    <th>Ürün Adı</th>
+                    <th>Satış Adeti</th>
+                    <th>Fiyatı (TL)</th>
+                    <th>Maaliyeti (TL)</th>
+                    
+                </tr>
+            </thead>
+            <tbody class="tableBody">
+
+
+            <tbody>
+        </table>
+    </div>
+
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/SalesHistoryDetail.js"></script> 

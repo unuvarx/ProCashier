@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Sipariş Durumu";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Orders.css" rel="stylesheet" />
+
+<main>
+    @if (ViewBag.UserName != null)
+    {
+        <input type="hidden" name="UserName" value="@ViewBag.UserName" />
+    }
+    <div class="ordersContainer">
+        <div class="waitingOrders">
+            <div class="title">
+                <img src="~/Content/Assets/Images/waiting.png" alt="Alternate Text" />
+                <span>HAZIRLANIYOR..</span>
+            </div>
+            <div class="orders">
+            </div>
+        </div>
+        <div class="deliveryOrders">
+            <div class="title">
+                <img src="~/Content/Assets/Images/delivery.png" alt="Alternate Text" />
+                <span>TESLİMATTA</span>
+            </div>
+            <div class="orders">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="infoModal">
+        <div class="modalContainer">
+            <div class="modalTitle">
+                <span>Sipariş Bilgileri</span>
+                <div class="totalCost">
+                    <span>ToplamTutar: </span>
+                    <label id="totalCost"> 1245TL </label>
+                </div>
+                <i class="fa fa-times close-icon"></i>
+            </div>
+            <div class="modalContent">
+                <div class="hr"></div>
+                <div class="customerInfo">
+                    <h5>Müşteri Bilgileri</h5>
+                    <span id="nameSurname"></span>
+                    <span id="phoneNumber"></span>
+                    <span id="adress"></span>
+                </div>
+                <div class="hr"></div>
+                <div class="customerNoteTitle">
+                    <h5>Müşteri Notu</h5>
+                    <span class="customerNote"></span>
+                </div>
+                <div class="hr"></div>
+                <h5>Siparişler</h5>
+                <div class="modalOrders">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Orders.js"></script>

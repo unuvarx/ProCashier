@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş Yap</title>
+    <link href="~/Content/Assets/Styles/AdminLogin.css" rel="stylesheet" />
+    <link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="loginContainer">
+        <form action="/AdminAuth/LoginReq" method="post">
+
+            <input autocomplete="off" type="text" name="username" value="" placeholder="Kullanıcı Adı" />
+            <input autocomplete="off" type="password" name="password" value="" placeholder="Şifre" />
+            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+            {
+                <div class="errorMessage">@ViewBag.ErrorMessage</div>
+            }
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+</body>
+</html>
+

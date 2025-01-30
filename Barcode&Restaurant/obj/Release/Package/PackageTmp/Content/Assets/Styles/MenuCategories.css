@@ -1,0 +1,203 @@
+﻿.categorie-container {
+  padding: 1rem;
+}
+
+.delete-categorie {
+    
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 447px) {
+    .delete-categorie button {
+        margin: 0.5rem 0;
+    }
+}
+    .products-container {
+        margin: 1rem;
+        margin-top: 4rem;
+    }
+.products-container .product {
+    display: flex;
+    border: 1px solid lightgray;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+.products-container .product .content {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+    .products-container .product div input {
+        padding: 0.25rem;
+        border: none;
+        background-color: lightgray;
+        border-radius: 4px;
+    }
+
+
+    .add-product {
+        width: 20rem;
+        margin-top: 4rem;
+        border: none;
+        padding: 1rem;
+    }
+
+
+.addProductModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.7);
+    display: none;
+}
+
+.addProductModal form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    
+    overflow-y: auto;
+}
+@media screen and (max-width: 702px) {
+    .addProductModal form {
+        
+        width: 90%;
+    }
+}
+.addProductModal form .input {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+    .addProductModal form .ingredient .ingredients-inputs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+       
+    }
+.addProductModal form .ingredient svg {
+    background-color: red;
+    width: fit-content;
+    padding: 0.25rem;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #fff;
+}
+.addProductModal form .ingredient .ingredients-inputs input {
+    width: 7.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+}
+    .addProductModal form .input input {
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        padding: 0.5rem;
+        outline: none;
+    }
+
+        .addProductModal form .input input:focus {
+            border-color: lightblue;
+        }
+        .addProductModal form .close {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+.addProductModal form .close svg {
+    font-size: 2rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.addProductModal form .close svg:hover {
+    transform: scale(1.2);
+}
+
+.addProductModal form .options .option {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px dotted lightgray;
+    padding: 1rem;
+    margin: 1rem 0;
+
+}
+.addProductModal form .options .btn-warning {
+    font-size: 13px;
+    margin: 0.25rem 0;
+}
+.addProductModal form .options .option label {
+    font-size: 13px;
+}
+    .addProductModal form .options .option div {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0;
+    }
+
+.addProductModal form .options input {
+    border-radius: 0px;
+    border: 1px solid #f0ad4e;
+    outline: none;
+}
+
+h3 {
+    text-align: center;
+    padding: 2rem;
+    background-color: #212529;
+    color: #fff;
+    border-top: 0.5px solid lightgray;
+}
+
+.product .edit-delete-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.products-container .product .edit-delete-product svg {
+    
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.products-container .product .edit-delete-product .fa-pencil {
+    background-color: orange;
+    color: #fff;
+    
+}
+.products-container .product .edit-delete-product .fa-trash {
+    background-color: red;
+    color: #fff;
+}
+
+
+.product .productIngredients div {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product .productIngredients span {
+   
+}
+.products-container .product .productIngredients input {
+    width: 7.5rem;
+    background-color: #fff;
+    border: 1px solid red;
+    font-size: 13px;
+    margin-right: 0.5rem;
+}

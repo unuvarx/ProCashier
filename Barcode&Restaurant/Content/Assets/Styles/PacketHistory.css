@@ -1,0 +1,36 @@
+﻿.myPackets {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 2rem 0;
+}
+.myPackets span {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.packetHistoryContainer {
+   
+}
+
+#statusTD #waiting, .fa-clock {
+    color: orange;
+}
+
+#statusTD #checking, .fa-check {
+    color: green;
+}
+#statusTD #warn, .fa-exclamation {
+    color: red;
+}
+
+@media (max-width: 661px) {
+    .packetHistoryContainer {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Mobil cihazlarda kaydırma pürüzsüzlüğü için */
+    }
+
+    table {
+        min-width: 600px; /* Tabloyu dar ekranlarda da kaydırılabilir hale getirmek için bir minimum genişlik ayarlayın */
+    }
+}

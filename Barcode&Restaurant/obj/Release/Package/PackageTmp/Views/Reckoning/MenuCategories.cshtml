@@ -1,0 +1,47 @@
+﻿@model Barcode_Restaurant.Models.MenuCategories
+@{
+    ViewBag.Title = "Menü Kategorileri";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/MenuCategories.css" rel="stylesheet" />
+<main>
+    <h3>@Model.CategoryName</h3>
+    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+    <div class="categorie-container">
+        <div class="delete-categorie">
+            <button class="btn btn-primary addProductBtn">
+                Ürün Ekle <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-danger deleteBtn">
+                Bu Kategoriyi Menüden Kaldır <i class="fa fa-exclamation" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="products-container">
+            <!-- Products will be dynamically loaded here by JavaScript -->
+        </div>
+    </div>
+
+    <div class="addProductModal">
+        <form>
+            <!-- Set the correct category ID -->
+            <div class="close">
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="input">
+                <span>Ürün Adı</span>
+                <input autocomplete="off" required type="text" maxlength="16"  name="productName" id="productName" value="" />
+            </div>
+            
+            
+            <div class="input">
+                <span>Ürün Fiyatı (TL)</span>
+                <input autocomplete="off" required type="text" name="productPrice" placeholder="00.00"  value="" />
+            </div>
+            <button type="submit" class="btn btn-secondary">Ürünü Ekle</button>
+        </form>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/MenuCategories.js"></script>

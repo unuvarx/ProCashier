@@ -1,0 +1,161 @@
+﻿.detail-container {
+    
+}
+
+.detail-container .pays {
+    margin: 1rem 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.detail-container .pays span {
+    margin: 1rem;
+    font-weight: 500;
+    color: red;
+}
+.detail-container .times {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.detail-container .times span {
+    color: cornflowerblue;
+    margin: 1rem;
+}
+.detail-container .ordersContainer h5 {
+    text-align: center;
+    margin: 2rem 0;
+}
+    .detail-container .ordersContainer .orders {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+.detail-container .ordersContainer .orders .orderItem {
+    border: 1px solid lightgray;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 2px;
+    margin: 1rem;
+}
+.detail-container .ordersContainer .orders .orderItem .content #title {
+    display: flex;
+    justify-content: space-between;
+}
+    .detail-container .ordersContainer .orders .orderItem .content #title span {
+    
+    font-size: 13px;
+    }
+
+    .detail-container .ordersContainer .orders .orderItem .content #title .orderProductPrice {
+        color:red;
+    }
+
+
+
+    .detail-container .ordersContainer .orders .orderItem .content #option {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+    }
+
+        .detail-container .ordersContainer .orders .orderItem .content #option label{
+            font-size: 13px;
+        }
+
+        .detail-container .ordersContainer .orders .orderItem .content #option span {
+            color: gray;
+            font-size: 13px;
+        }
+
+
+
+    .detail-container .ordersContainer .orders .orderItem .content #willRemove {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+    }
+
+        .detail-container .ordersContainer .orders .orderItem .content #willRemove label {
+            font-size: 13px;
+        }
+
+        .detail-container .ordersContainer .orders .orderItem .content #willRemove span {
+            color: gray;
+            font-size: 13px;
+        }
+
+
+
+     .detail-container .persons {
+         display: flex;
+         justify-content: center;
+         margin-bottom: 1rem;
+
+     }
+     .detail-container .persons span {
+         margin: 0 1rem 0;
+     }
+
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .boxes .box {
+        margin: 1rem;
+        background-color: red;
+        width: 12.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+        .boxes .box img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .boxes .box span {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .boxes .box span label {
+                font-weight: 500;
+                color: #303030;
+            }
+
+        .boxes .box div {
+            font-size: 20px;
+            color: red;
+            margin-top: 1rem;
+        }
+
+    .boxes .totalBox {
+        background-color: greenyellow !important;
+    }
+
+    .boxes .cashBox {
+        background-color: #ffde59;
+    }
+
+    .boxes .cardBox {
+        background-color: #5ce1e6;
+    }
+
+
+    .boxes .carrierBox {
+        background-color: lightyellow;
+    }

@@ -1,0 +1,55 @@
+﻿.navbar {
+    background-color: rgb(33, 37, 41) !important;
+}
+
+    .navbar .container .navbarLogo {
+        text-decoration: none;
+        width: 10rem;
+        height: 5rem;
+        margin-right: 1rem;
+    }
+
+        .navbar .container .navbarLogo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+@media screen and (max-width: 1024px) {
+
+
+    .navbar .container .navbarLogo {
+        margin-right: 0;
+    }
+}
+
+.navbar form {
+    width: 2rem;
+    height: 2rem;
+}
+.navbar form button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+
+}
+    .navbar form button img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        transition: all 0.2s;
+        
+    }
+        .navbar form button img:hover {
+            transform: scale(1.1);
+        }
+
+.footer-container {
+    background-color: rgb(33, 37, 41) !important;
+    margin-top: 10rem;
+
+}
+
+

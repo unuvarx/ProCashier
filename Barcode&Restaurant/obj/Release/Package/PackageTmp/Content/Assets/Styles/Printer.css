@@ -1,0 +1,60 @@
+﻿h5 {
+    text-align: center;
+    margin-top: 1rem;
+}
+h3{
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 2rem;
+}
+
+.stageContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+   
+}
+.stageContainer .stage1 {
+    display: flex;
+    justify-content: center;
+
+}
+.stageContainer label {
+    margin-right: 8px;
+    color: darkred;
+}
+    .stageContainer .stage2, .stageContainer .stage11 {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+        .stageContainer .stage2 .img, .stageContainer .stage11 .img {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 5rem;
+            object-fit: contain;
+        }
+    
+.stage3, .stage4 , .stage5 , .stage6 , .stage7 , .stage8 , .stage9  {
+  
+}
+    .stage3 div, .stage4 div, .stage5 div, .stage6 div, .stage7 div, .stage8 div, .stage9 div,  .stage12 div, .stage13 div, .stage14 div, .stage15 div, .stage16 div, .stage17 div, .stage18 div {
+        display: flex;
+        justify-content: center;
+    }
+    .stage3 img, .stage4 img, .stage5 img, .stage6 img, .stage7 img, .stage8 img, .stage9 img,  .stage12 img, .stage13 img, .stage14 img, .stage15 img, .stage16 img, .stage17 img, .stage18 img {
+        max-width: 30rem;
+        width: 100%;
+        height: 30rem;
+        object-fit: contain;
+    }
+
+.hr {
+    height: 1px;
+    background-color: lightgray;
+    width: 100%;
+    margin: 2rem 0;
+}

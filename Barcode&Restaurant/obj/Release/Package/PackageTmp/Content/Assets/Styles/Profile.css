@@ -1,0 +1,87 @@
+﻿.myPackets {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+    .myPackets span {
+        font-size: 3rem;
+    }
+
+
+
+.profileContainer {
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .profileContainer .profile {
+        display: flex;
+        flex-direction: column;
+        background-color: lightgrey;
+        padding: 2rem;
+        min-width: 30rem;
+        border-radius: 8px;
+        border: 4px dotted #fff;
+    }
+
+
+@media screen and (max-width: 538px) {
+    .profileContainer .profile {
+        min-width: 100%;
+    }
+}
+    .profileContainer .profile div {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        
+    }
+.profileContainer .profile div input {
+    background-color: #fff;
+    padding: 0.2rem;
+    font-weight: bold;
+    width: -webkit-fill-available;
+   
+    
+}
+.buyContainer {
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .buyContainer .iban {
+        display: flex;
+        flex-direction: column;
+        background-color: lightyellow;
+        padding: 2rem;
+        width: 40rem;
+        border-radius: 8px;
+        border: 4px dotted #fff;
+    }
+@media screen and (max-width: 680px) {
+    .buyContainer .iban {
+        min-width: 100%;
+    }
+}
+.buyContainer .iban div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+    
+}
+.buyContainer .iban div input {
+    font-weight: bold;
+    padding: 0.5rem;
+}
+.buyContainer .iban div .info-text {
+    color: red;
+}
+.buyContainer .iban div .file {
+    padding: 0;
+    border: 1px solid lightgray;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #fff;
+}

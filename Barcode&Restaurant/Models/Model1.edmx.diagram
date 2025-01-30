@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5c4f9ce358be4ea4823a2493af25e387" Name="Diagram1">
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Admins" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.BarcodeProducts" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.BoughtPacket" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Carriers" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Customers" Width="1.5" PointX="6" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.MenuCategories" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.MenuProducts" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.MyCustomers" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Notifications" Width="1.5" PointX="5.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.PacketInformations" Width="1.5" PointX="3.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.PacketOrders" Width="1.5" PointX="8.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Packets" Width="1.5" PointX="3" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.SalesHistory" Width="1.5" PointX="3" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.TableCategories" Width="1.5" PointX="3" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Tables" Width="1.5" PointX="8.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.TableSalesHistory" Width="1.5" PointX="10.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Users" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarcodeRestoDBModel.Waiters" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_BarcodeProducts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_BoughtPacket_PacketInformations" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_BoughtPacket_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Carriers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_PacketOrders_Carriers" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_PacketOrders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_MenuCategories_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_MenuProducts_MenuCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_MenuProducts_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Notifications_Tables" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Notifications_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Notifications_Waiters" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_PacketOrders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Packets_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_SalesHistory_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_TableCategories_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Tables_TableCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Tables_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_TableSalesHistory_Tables" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_TableSalesHistory_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="BarcodeRestoDBModel.FK_Waiters_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

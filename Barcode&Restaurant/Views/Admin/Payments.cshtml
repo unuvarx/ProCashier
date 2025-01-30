@@ -1,0 +1,89 @@
+﻿@model List<Barcode_Restaurant.Models.BoughtPacket>
+@{
+    ViewBag.Title = "Payments";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Payments.css" rel="stylesheet" />
+<main>
+
+    <h2>Satın Alma İstekleri</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Dekont</th>
+                <th scope="col">Satın Alma Tarihi</th>
+                <th scope="col">Dekontu İndir</th>
+                <th scope="col">IP</th>
+                <th scope="col">Paket</th>
+                <th scope="col">Süresi</th>
+                <th scope="col">Fiyatı</th>
+                <th scope="col">Aksiyonlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.ReceiptImg" alt="Alternate Text" />
+
+                        </td>
+                        <td><a id="downloadLink" href="@Url.Action("DownloadReceipt", "Admin", new { filePath = item.ReceiptImg })">indir</a></td>
+                        <td>@item.BoughtTime</td>
+                        <td>@item.BoughtIP</td>
+                        <td>
+                            @if (item.PacketType == 0)
+                    {
+                        <span>Barkod</span>
+                    }
+                            else
+                    {
+                        <span>Adisyon</span>
+                    }
+
+                        </td>
+                        <td>
+                            @if (ViewBag.PacketInformations != null)
+                            {
+                                foreach (var info in ViewBag.PacketInformations)
+                        {
+                            if (info.InfoId == item.InfoId)
+                            {
+                                <span>@info.PacketName</span>
+                                        break;
+                                    }
+                                }
+                            }
+
+
+                        </td>
+                        <td> @item.Price TL </td>
+
+                        <td>
+                            <div class="checkInput">
+                                <input autocomplete="off" maxlength="20" placeholder="Mesaj" type="text" name="note" value="" />
+                                <button id="checkBtn" data-user-id="@item.UserId" data-bought-packet-id="@item.BoughtPacketId" data-packet-type="@item.PacketType">Onayla</button>
+                            </div>
+                            <div class="rejectInput">
+                                <input autocomplete="off" maxlength="20" placeholder="Mesaj" type="text" name="note" value="" />
+                                <button id="rejectBtn" data-user-id="@item.UserId" data-bought-packet-id="@item.BoughtPacketId" data-packet-type="@item.PacketType">Reddet</button>
+                            </div>
+                        </td>
+
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    
+
+
+</main>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/Payments.js"></script>
+

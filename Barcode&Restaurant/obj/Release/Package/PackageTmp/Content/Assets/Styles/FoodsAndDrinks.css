@@ -1,0 +1,139 @@
+﻿
+
+
+    .tables {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+
+.table {
+    width:10rem;
+    height: 10rem;
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 1rem;
+}
+    .table img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+        filter: brightness(75%);
+    }
+    .table span {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+
+.addTable {
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+        margin: 1rem;
+        border-radius: 4px;
+
+}
+    .addTable button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    .addTable button span {
+        font-size: 1.2rem;
+    }
+    .addTable button .plus {
+        font-weight: 500;
+        font-size: 2.5rem;
+    }
+.addTable button:hover {
+    background-color: gray;
+    color: #fff;
+}
+
+.addCategorie {
+    
+    background-color: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: 100vh;
+    opacity: 0.85;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+.addCategorie form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.addCategorie form .close {
+    display: flex;
+    justify-content: flex-end;
+}
+.addCategorie form .close svg {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+}
+    .addCategorie form .close svg:hover {
+        transform: scale(1.2);
+    }
+
+
+ .addCategorie form .input {
+     display: flex;
+     flex-direction: column;
+     margin: 0.5rem 0;
+ }
+    .addCategorie form .input  label {
+        font-size: 15px;
+    }
+    .addCategorie form .input  input {
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid gray;
+        padding: 0.25rem;
+    }
+    .addCategorie form button {
+        margin-top: 0.5rem;
+        border: none;
+        border-radius: 4px;
+        padding: 0.5rem;
+        font-weight: bold;
+        background-color: black;
+        color: #fff;
+        transition: all 0.3s;
+    }
+    .addCategorie form button:hover {
+        background-color: gray;
+        color: black;
+    }

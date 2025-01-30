@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|c:\\users\\sefa\\documents\\software\\projeler\\barcode\u0026restaurant\\content\\assets\\scripts\\productslist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|solutionrelative:content\\assets\\scripts\\productslist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|c:\\users\\sefa\\documents\\software\\projeler\\barcode\u0026restaurant\\content\\assets\\styles\\productslist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|solutionrelative:content\\assets\\styles\\productslist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|c:\\users\\sefa\\documents\\software\\projeler\\barcode\u0026restaurant\\content\\assets\\scripts\\tables.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|solutionrelative:content\\assets\\scripts\\tables.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|c:\\users\\sefa\\documents\\software\\projeler\\barcode\u0026restaurant\\views\\barcode\\productslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3142BB8E-6186-4AB7-A102-C00C82ADD7D2}|Barcode\u0026Restaurant.csproj|solutionrelative:views\\barcode\\productslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 3,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tables.js",
+              "DocumentMoniker": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Scripts\\Tables.js",
+              "RelativeDocumentMoniker": "Content\\Assets\\Scripts\\Tables.js",
+              "ToolTip": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Scripts\\Tables.js",
+              "RelativeToolTip": "Content\\Assets\\Scripts\\Tables.js",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-09T19:15:10.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsList.css",
+              "DocumentMoniker": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Styles\\ProductsList.css",
+              "RelativeDocumentMoniker": "Content\\Assets\\Styles\\ProductsList.css",
+              "ToolTip": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Styles\\ProductsList.css",
+              "RelativeToolTip": "Content\\Assets\\Styles\\ProductsList.css",
+              "ViewState": "AQIAAMgAAAAAAAAAAAAqwM8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-09T19:10:16.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductsList.js",
+              "DocumentMoniker": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Scripts\\ProductsList.js",
+              "RelativeDocumentMoniker": "Content\\Assets\\Scripts\\ProductsList.js",
+              "ToolTip": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Content\\Assets\\Scripts\\ProductsList.js",
+              "RelativeToolTip": "Content\\Assets\\Scripts\\ProductsList.js",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAgwHYAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-09T19:03:53.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductsList.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Views\\Barcode\\ProductsList.cshtml",
+              "RelativeDocumentMoniker": "Views\\Barcode\\ProductsList.cshtml",
+              "ToolTip": "C:\\Users\\Sefa\\Documents\\SOFTWARE\\Projeler\\Barcode\u0026Restaurant\\Views\\Barcode\\ProductsList.cshtml",
+              "RelativeToolTip": "Views\\Barcode\\ProductsList.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-09T19:00:28.281Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

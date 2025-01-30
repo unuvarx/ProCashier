@@ -1,0 +1,46 @@
+﻿
+body, * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.loginContainer {
+   
+    width: -webkit-fill-available;
+    height: 100vh;
+    overflow-y: hidden;
+    background-color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginContainer form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+.loginContainer form  input {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    outline: none;
+}
+.loginContainer form  button {
+    background-color: cornflowerblue;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 2px;
+    margin-top: 1rem;
+    cursor: not-allowed;
+    text-align: center;
+    text-decoration: none;
+}
+.loginContainer form  .errorMessage {
+    font-size: 13px;
+    color: red;
+}
+   

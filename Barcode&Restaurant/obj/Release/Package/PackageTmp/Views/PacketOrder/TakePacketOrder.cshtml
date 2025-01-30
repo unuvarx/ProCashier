@@ -1,0 +1,130 @@
+﻿
+
+@model Barcode_Restaurant.Models.PacketOrders
+@{
+
+    Layout = null;
+}
+
+
+<link href="~/Content/Assets/Styles/TakePacketOrder.css" rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+<title>Paket Siparişi Al</title>
+<main>
+    @if (Model != null && Model.PacketOrderId > 0 && Model.Orders != null)
+    {
+        <input type="hidden" name="PacketOrderId" value="@Model.PacketOrderId" />
+        <input type="hidden" name="Orders" value="@Model.Orders" />
+    }
+    @if (ViewBag.UserName != null)
+            {
+                <input type="hidden" name="UserName" value="@ViewBag.UserName" />
+            }
+    <div class="tableContainer">
+        <div class="orderContainer">
+            <div class="title">
+                <a href="/PacketOrder/Orders">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+                <span>
+                    PAKET SİPARİŞ
+                </span>
+            </div>
+            <div class="orders">
+
+            </div>
+            <div class="foot">
+                <div>
+                    <span>Toplam Tutar</span>
+                    <label> 0TL </label>
+                </div>
+                <button class="save-btn">Kaydet</button>
+            </div>
+
+        </div>
+
+        <div class="menuContainer">
+            <div class="menuTitle">
+                @if (ViewBag.MenuCategories != null && ViewBag.MenuCategories.Count > 0)
+                {
+                    foreach (var item in ViewBag.MenuCategories)
+                    {
+                        <button class="categorieBtn" data-category-id="@item.CategoryId">@item.CategoryName</button>
+                    }
+                }
+            </div>
+            <div class="menuProducts">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="personModal">
+        <div class="modalContent">
+            <div class="title">
+                <span>Müşteri Bilgileri</span>
+                <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            </div>
+            <div class="personInput">
+                <div>
+                    <input type="text" name="phoneNumberOrNameSurname" value="" placeholder="Müşteri telefon numarası veya isim soyisim" />
+                    <button class="newCustomerBtn">
+                        Yeni
+                    </button>
+                </div>
+                <span class="notFound"></span>
+
+            </div>
+
+
+            <div class="customersInfo">
+
+            </div>
+
+            <div class="addNewCustomer">
+                <form id="addCustomerForm" action="/PacketOrder/AddNewCustomer" method="post">
+                    <div>
+                        <label>İsim Soyisim</label>
+                        <input autocomplete="off" id="customerNameSurname" required type="text" name="customerNameSurname" value="" />
+                    </div>
+                    <div>
+                        <label>Telefon Numarası</label>
+                        <input autocomplete="off" id="customerPhoneNumber" required type="text" name="customerPhoneNumber" value="" />
+                    </div>
+                    <div>
+                        <label>Adres</label>
+                        <textarea autocomplete="off" id="customerAdress" required name="customerAdress" value="" rows="3">
+
+                        </textarea>
+                    </div>
+                    <button type="submit"> Ekle </button>
+                </form>
+            </div>
+            <div class="editCustomerForm">
+                <form id="editCustomerForm" action="/PacketOrder/UpdateCustomer" method="post">
+                    <div>
+                        <label>İsim Soyisim</label>
+                        <input autocomplete="off" id="editCustomerNameSurname" required type="text" name="editCustomerNameSurname" value="" />
+                    </div>
+                    <div>
+                        <label>Telefon Numarası</label>
+                        <input autocomplete="off" id="editCustomerPhoneNumber" required type="text" name="editCustomerPhoneNumber" value="" />
+                    </div>
+                    <div>
+                        <label>Adres</label>
+                        <textarea autocomplete="off" id="editCustomerAdress" required name="editCustomerAdress" value="" rows="3">
+
+                        </textarea>
+                    </div>
+                    <button type="submit"> Güncelle </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/TakePacketOrder.js"></script>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Masa Ekle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+
+<link href="~/Content/Assets/Styles/AddTable.css" rel="stylesheet" />
+<main>
+    <h3>Masa Ekle</h3>
+    <div class="addTableContainer">
+        <form id="AddTableForm" action="/Reckoning/AddTableReq" method="post">
+            <div>
+                <label>Masa Adı</label>
+                <input maxlength="8" required autocomplete="off" class="tableName" type="text" name="tableName" value="" />
+            </div>
+
+
+            <div>
+                <label>Masa Bölgesi</label>
+                <select required id="categorieSelect" name="tableCategoryId">
+                </select>
+            </div>
+            
+                <div class="message">
+                    <span></span>
+                </div>
+           
+            <button type="submit">Masayı Ekle</button>
+        </form>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AddTable.js"></script>

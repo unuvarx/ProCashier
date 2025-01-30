@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "UpdateCarrier";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+<link href="~/Content/Assets/Styles/AddEmployee.css" rel="stylesheet" />
+<main>
+    <div class="addEmployeeContainer">
+        <h3>Kurye Güncelle</h3>
+        @if (ViewBag.Carrier != null)
+        {
+            <form action="/Carriers/UpdateCarrierReq" method="post">
+                <input type="hidden" name="id" value="@ViewBag.Carrier.CarrierId" />
+                <div>
+                    <label>İsim Soyisim</label>
+                    <input type="text" name="nameSurname" value="@ViewBag.Carrier.NameSurname" />
+                </div>
+                <div>
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" name="username" value="@ViewBag.Carrier.Username" />
+                </div>
+                <div>
+                    <label>Şifre</label>
+                    <input type="text" name="password" value="@ViewBag.Carrier.Password" />
+                </div>
+
+                @if (!string.IsNullOrEmpty(ViewBag.Message))
+                {
+                    <div class="Message">@ViewBag.Message</div>
+                }
+                <button type="submit">Güncelle</button>
+            </form>
+        }
+    </div>
+</main>
+
+

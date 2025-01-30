@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Paket Satın Al";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/Profile.css" rel="stylesheet" />
+<main>
+    <div class="myPackets">
+        <span>Paket Satın Al</span>
+    </div>
+    <div class="buyContainer">
+        <div class="iban">
+            <h5>Alıcı Bilgileri - EFT</h5>
+            <div>
+                <label>Banka</label>
+                <input disabled type="text" name="bank" value="Ziraat Bankası" />
+            </div>
+            <div>
+                <label>Alıcı Ad Soyad</label>
+                <input disabled type="text" name="nameSurname" value="Sefa Ünüvar" />
+            </div>
+            <div>
+                <label>IBAN</label>
+                <input disabled type="text" name="iban" value="TR9800 0100 0018 8284 8506 5001" />
+            </div>
+            @if (ViewBag.User != null)
+            {
+                <div>
+                    <label>Açıklama</label>
+                    <input disabled type="text" name="desc" value="Lütfen bu kısmı boş bırakın!" />
+                </div>
+            }
+            <div>
+                <span class="info-text">Yukarıdaki bilgiler ile eksiksiz bir şekilde Havale işlemini yaptıktan sonra aşağıdaki 'Alınacak Paket' kısmından paketinizi seçip ve dekontu yükleyin.Daha sonra, 'Satın Al' butonuna basmayı unutmayın. En geç 24 saat içinde paketiniz aktif hale getirilecektir. </span>
+            </div>
+            <div>
+                <form action="/User/BuyPacketReq" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label>Alınacak Paket</label>
+                        <select required class="form-select"  name="infoId" aria-label="Default select example">
+                            
+                        </select>
+                        <div>
+                            <label>Dekont</label>
+                            <input required class="file"  accept=".jpg, .jpeg, .png, .pdf" type="file" name="receipt" value="" />
+                        </div>
+                    </div>
+                    <button class="btn btn-info" type="submit">Satın Al</button>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+                    @if (ViewBag.SuccessMessage != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @ViewBag.SuccessMessage
+                        </div>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/BuyPacket.js"></script>

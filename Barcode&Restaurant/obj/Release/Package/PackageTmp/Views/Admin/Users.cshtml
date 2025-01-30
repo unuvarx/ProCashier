@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AdminUsers.css" rel="stylesheet" />
+
+<main>
+    <h2>Tüm Kullanıcılar</h2>
+    <div class="searchUser">
+        <label>
+            Kullanıcı Ara <i class="fa fa-search" aria-hidden="true"></i>
+        </label>
+        <input type="text" id="findUser" name="findUser" placeholder="Ad Soyad veya Kullanıcı Adı" value="" />
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">Kullanıcı Adı</th>
+                <th scope="col">Email</th>
+                <th scope="col">Durumu</th>
+                <th scope="col">Aksiyonlar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Kullanıcılar buraya dinamik olarak eklenecek -->
+        </tbody>
+    </table>
+
+    <!-- Pagination butonlarının ekleneceği alan -->
+    <div class="paginationContainer">
+        <div class="pagination">
+            <!-- Butonlar jQuery ile dinamik olarak oluşturulacak -->
+        </div>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/AdminUsers.js"></script>

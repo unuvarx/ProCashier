@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Assets/Styles/Auth.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş Yap</title>
+    <link href="~/Content/Assets/Images/logos/pro.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="preloader">
+        <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+    </div>
+    <div class="loginContainer">
+        <div class="login">
+            <img src="~/Content/Assets/Images/logos/procashier.png" alt="Alternate Text" />
+            <h1>Üye Girişi</h1>
+            <div class="categories">
+                <div class="categorieBtns">
+                    <span id="userAuth">İşletme Girişi</span>
+                    <div class="hr"></div>
+                    <span id="carriers">Kurye Girişi</span>
+                    <div class="hr"></div>
+                    <span id="waiters">Garson Girişi</span>
+                </div>
+            </div>
+            <form id="userAuthForm" action="/UserAuth/LoginReq" method="post">
+                <div>
+                    <label>Kullanıcı Adı</label>
+                    <input required type="text" name="username" value="" />
+                </div>
+                <div>
+                    <label>Şifre</label>
+                    <input required type="password" name="password" value="" />
+                </div>
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="errorMessage">@ViewBag.ErrorMessage</div>
+                }
+                <button type="submit">Giriş Yap</button>
+            </form>
+            <form id="carriersForm" action="/UserAuth/LoginCarrierReq" method="post">
+                <div>
+                    <label>Kullanıcı Adı - (Kurye)</label>
+                    <input required type="text" name="carrierUsername" value="" />
+                </div>
+                <div>
+                    <label>Şifre - (Kurye)</label>
+                    <input required type="password" name="carrierPassword" value="" />
+                </div>
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="errorMessage">@ViewBag.ErrorMessage</div>
+                }
+                <button type="submit">Giriş Yap</button>
+            </form>
+            <form id="waitersForm" action="/UserAuth/LoginWaiterReq" method="post">
+                <div>
+                    <label>Kullanıcı Adı - (Garson)</label>
+                    <input required type="text" name="waiterUsername" value="" />
+                </div>
+                <div>
+                    <label>Şifre - (Garson)</label>
+                    <input required type="password" name="waiterPassword" value="" />
+                </div>
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="errorMessage">@ViewBag.ErrorMessage</div>
+                }
+                <button type="submit">Giriş Yap</button>
+            </form>
+            <div class="register">
+                <a href="/UserAuth/Register">Henüz bir hesabım yok. Üye OL</a>
+                <a href="/UserAuth/SendRestartPassword">Şifremi Unuttum</a>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/Assets/Scripts/Auth.js"></script>
+</body>
+</html>
+

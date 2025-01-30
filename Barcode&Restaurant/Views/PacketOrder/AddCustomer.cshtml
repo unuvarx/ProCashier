@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddEmployee.css" rel="stylesheet" />
+<main>
+    <div class="addEmployeeContainer">
+        <h3>Müşteri Ekle</h3>
+        <form action="/PacketOrder/AddCustomerReq" method="post">
+            <div>
+                <label>İsim Soyisim</label>
+                <input autocomplete="off" required type="text" name="nameSurname" value="" id="nameSurname" />
+            </div>
+            <div>
+                <label>Phone Number</label>
+                <input autocomplete="off" required type="text" name="phoneNumber" value="" />
+            </div>
+            <div>
+                <label> Adress </label>
+                <textarea autocomplete="off" required name="adress" rows="3" value=""> </textarea>
+            </div>
+
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="Message">@ViewBag.Message</div>
+            }
+            <button type="submit">Ekle</button>
+        </form>
+    </div>
+</main>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js">
+
+</script>
+<script src="~/Content/Assets/Scripts/Utils.js"></script>

@@ -1,0 +1,529 @@
+﻿.sellingContainer {
+    padding: 3rem 2rem;
+}
+    .sellingContainer .head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+@media screen and (max-width: 1350px) {
+
+    .sellingContainer .head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+    .sellingContainer .head .search {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+        .sellingContainer .head .search input {
+            height: 6rem;
+            width: 30rem;
+            outline: none;
+            background-color: #C72931;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            border-radius: 4px;
+            caret-color: #fff;
+        }
+@media screen and (max-width: 580px) {
+
+    .sellingContainer .head .search input {
+       width: 90%;
+    }
+}
+            .sellingContainer .head .search input::placeholder {
+                color: #fff;
+            }
+        .sellingContainer .head .search button {
+            width: 4rem;
+            height: 6rem;
+            margin-left: 0.5rem;
+            border: none;
+            padding: 12px;
+            transition: all 0.3s;
+            border: 3px solid gray;
+            border-radius: 4px;
+        }
+            .sellingContainer .head .search button:hover {
+                background-color: #C72931;
+                color: #fff;
+            }
+            .sellingContainer .head .search button img {
+                width: 75%;
+            }
+.sellingContainer .head .search .printBtn svg {
+    font-size: 18px;
+}
+
+    .sellingContainer .head .response {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+@media screen and (max-width: 1350px) {
+
+    .sellingContainer .head .response {
+        margin-top: 2rem;
+    }
+}
+        .sellingContainer .head .response div {
+            display: flex;
+            height: 6rem;
+            flex-direction: column;
+            margin: 0 4px;
+        }
+@media screen and (max-width: 1350px) {
+
+    .sellingContainer .head .response div {
+        display: flex;
+        height: 6rem;
+        flex-direction: column;
+        margin: 1rem 4px;
+    }
+}
+            .sellingContainer .head .response div input {
+                height: 100%;
+                border-radius: 4px;
+                outline: none;
+                border: none;
+                font-weight: bold;
+                width: 15rem;
+            }
+        .sellingContainer .head .response div #paid {
+            background-color: lightgray;
+            font-size: 19px;
+        }
+            .sellingContainer .head .response div #cost {
+                background-color: darkgray;
+                font-size: 35px;
+                color: #C72931;
+            }
+            .sellingContainer .head .response div #change {
+                background-color: darkgray;
+                font-size: 19px;
+                color: darkgreen;
+            }
+
+.sellingContainer .completeSell {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+   
+}
+
+    .sellingContainer .completeSell .completeBtn {
+        border: none;
+        font-size: 1.6rem;
+        border-radius: 4px;
+        background-color: #0080ff;
+        color: #fff;
+        padding: 1rem;
+        transition: all 0.3s;
+    }
+        .sellingContainer .completeSell .completeBtn:hover {
+            background-color: #0070ff;
+        }
+    .sellingContainer .completeSell .newCustomerBtn {
+        border: none;
+        font-size: 1.6rem;
+        border-radius: 4px;
+        background-color: rgb(47, 178, 47);
+      
+        color: #fff;
+        padding: 1rem;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+@media screen and (max-width: 580px) {
+
+    .sellingContainer .completeSell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+    }
+        .sellingContainer .completeSell .newCustomerBtn {
+           margin-top: 1rem;
+        }
+}
+        .sellingContainer .completeSell .newCustomerBtn:hover {
+            background-color: rgb(57, 158, 57);
+        }
+
+
+
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    
+}
+
+    .fl-table td, .fl-table th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .fl-table td {
+        border-right: 1px solid #f8f8f8;
+        font-size: 15px;
+    }
+
+    .fl-table thead th {
+        color: #ffffff;
+        background-color: lightgray;
+        color: rgb(33, 37, 41);
+    }
+
+
+        .fl-table thead th:nth-child(odd) {
+            color: #ffffff;
+            background: rgb(33, 37, 41);
+            
+        }
+
+    .fl-table tr:nth-child(even) {
+        background: #F8F8F8;
+    }
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+        margin-bottom: 25rem;
+    }
+
+    .table-wrapper:before {
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+
+        .fl-table thead th:last-child {
+            border-bottom: none;
+        }
+
+    .fl-table thead {
+        float: left;
+    }
+
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+
+        .fl-table tbody tr:nth-child(odd) {
+            background: none;
+        }
+
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+
+.trash {
+    width: 2rem;
+    border: none;
+   
+    background-color: #fff;
+}
+.trash img {
+    width: 100%;
+    transition: all 0.2s;
+}
+    .trash img:hover {
+        transform: scale(1.2);
+    }
+th {
+    font-size: 15px;
+    font-weight: 500;
+}
+.isUpdate {
+    font-weight: 350;
+    font-size: 12px;
+
+}
+
+.x  {
+    width: 3rem;
+    border: none;
+    background-color: transparent;
+   
+    border-radius: 50%;
+}
+
+    .x img {
+        padding: 8px;
+        width: 100%;
+        transition: all 0.2s;
+        border-radius: 50%;
+    }
+.x img:hover {
+    transform: scale(1.2);
+}
+.increaseBtn, .decreaseBtn {
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 15px;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.increaseBtn {
+    background-color: green;
+    
+}
+.decreaseBtn {
+    background-color: red;
+    
+}
+.increaseBtn:hover {
+    background-color: darkgreen;
+}
+.decreaseBtn:hover {
+    background-color: darkred;
+}
+.amountInput {
+    outline: none;
+    width: 2rem;
+    text-align: center;
+}
+.priceInput {
+    outline: none;
+    width: 3rem;
+    text-align: center;
+}
+.costInput {
+    outline: none;
+    width: 3rem;
+    text-align: center;
+}
+.isUpdateInput {
+
+}
+
+
+.AddProductModal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background-color: rgb(33, 37, 41);
+    padding: 4rem 2rem;
+    width: -webkit-fill-available;
+    
+    align-items: center;
+    justify-content: center;
+    opacity: 0.95;
+    display: none;
+}
+.AddProductModal .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+    .AddProductModal h5 {
+        color: #fff;
+    }
+    .AddProductModal.flex {
+        display: flex;
+        height: 100vh;
+    }
+    .addContainer form {
+        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 4px;
+        width: 650px;
+    }
+
+@media screen and (max-width:700px) {
+    .addContainer form {
+        width: 90%;
+    }
+}
+
+.addContainer form div {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+    .addContainer form div input {
+        outline: none;
+        border: none;
+        padding: 0.4rem 0.2rem;
+        border: 1px solid #fff;
+        
+    }
+
+        .addContainer form div input:focus {
+            border-color: cornflowerblue;
+            color: cornflowerblue;
+        }
+
+    .addContainer form div button {
+        color: #fff;
+        margin-top: 1rem;
+    }
+
+
+.addContainer {
+    
+    width: fit-content;
+    position: relative;
+}
+.addContainer .exitModal {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+   
+
+
+}
+    .addContainer .exitModal img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+
+.SuccessMessageModal, .ErrorMessageModal {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 999999999999999999999;
+    padding: 1rem;
+    border-radius: 4px;
+    width: 20rem;
+    display: none;
+    opacity: 0.9.5
+}
+.SuccessMessageModal .head, .ErrorMessageModal .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    .SuccessMessageModal .head img, .ErrorMessageModal .head img {
+        width: 5rem;
+    }
+    .SuccessMessageModal .head span, .ErrorMessageModal .head span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+    }
+    .SuccessMessageModal .content, .ErrorMessageModal .content {
+        color: #fff;
+    }
+.SuccessMessageModal {
+    background-color: rgb(47, 178, 47);
+}
+.ErrorMessageModal {
+    background-color: #C72931;
+}
+
+.sellingContainer .completeSell .payBtns .cashPaid {
+    border: none;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    background-color: #0080ff;
+    color: #fff;
+    padding: 1rem;
+    transition: all 0.3s;
+    margin: 0.5rem 0;
+    margin-right: 0.25rem;
+}
+
+    .sellingContainer .completeSell .payBtns .cashPaid:hover {
+        background-color: #0070ff;
+    }
+
+.sellingContainer .completeSell .payBtns .cardPaid {
+    border: none;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    background-color: #ff8a00;
+    color: #fff;
+    padding: 1rem;
+    transition: all 0.3s;
+    margin: 0.5rem 0;
+}
+
+    .sellingContainer .completeSell .payBtns .cardPaid:hover {
+        background-color: #ffde59;
+    }

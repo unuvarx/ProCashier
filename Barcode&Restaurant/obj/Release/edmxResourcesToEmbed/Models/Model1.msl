@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BarcodeRestoDBModelStoreContainer" CdmEntityContainer="BarcodeRestoEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BarcodeProducts">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.BarcodeProducts">
+        <MappingFragment StoreEntitySet="BarcodeProducts">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoughtPacket">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.BoughtPacket">
+        <MappingFragment StoreEntitySet="BoughtPacket">
+          <ScalarProperty Name="BoughtPacketId" ColumnName="BoughtPacketId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="InfoId" ColumnName="InfoId" />
+          <ScalarProperty Name="ReceiptImg" ColumnName="ReceiptImg" />
+          <ScalarProperty Name="BoughtTime" ColumnName="BoughtTime" />
+          <ScalarProperty Name="BoughtIP" ColumnName="BoughtIP" />
+          <ScalarProperty Name="PacketType" ColumnName="PacketType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carriers">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Carriers">
+        <MappingFragment StoreEntitySet="Carriers">
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuCategories">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.MenuCategories">
+        <MappingFragment StoreEntitySet="MenuCategories">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryImg" ColumnName="CategoryImg" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuProducts">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.MenuProducts">
+        <MappingFragment StoreEntitySet="MenuProducts">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MyCustomers">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.MyCustomers">
+        <MappingFragment StoreEntitySet="MyCustomers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerImg" ColumnName="CustomerImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Notifications">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PacketInformations">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.PacketInformations">
+        <MappingFragment StoreEntitySet="PacketInformations">
+          <ScalarProperty Name="InfoId" ColumnName="InfoId" />
+          <ScalarProperty Name="PacketType" ColumnName="PacketType" />
+          <ScalarProperty Name="PacketPrice" ColumnName="PacketPrice" />
+          <ScalarProperty Name="PacketName" ColumnName="PacketName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PacketOrders">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.PacketOrders">
+        <MappingFragment StoreEntitySet="PacketOrders">
+          <ScalarProperty Name="PacketOrderId" ColumnName="PacketOrderId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="OrderStartingDate" ColumnName="OrderStartingDate" />
+          <ScalarProperty Name="OrderEndDate" ColumnName="OrderEndDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CardPaid" ColumnName="CardPaid" />
+          <ScalarProperty Name="CashPaid" ColumnName="CashPaid" />
+          <ScalarProperty Name="CustomerNote" ColumnName="CustomerNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packets">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Packets">
+        <MappingFragment StoreEntitySet="Packets">
+          <ScalarProperty Name="PacketId" ColumnName="PacketId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PacketType" ColumnName="PacketType" />
+          <ScalarProperty Name="RemainingUsageTime" ColumnName="RemainingUsageTime" />
+          <ScalarProperty Name="DayStartTime" ColumnName="DayStartTime" />
+          <ScalarProperty Name="DayEndTime" ColumnName="DayEndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesHistory">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.SalesHistory">
+        <MappingFragment StoreEntitySet="SalesHistory">
+          <ScalarProperty Name="SalesHistoryId" ColumnName="SalesHistoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CardPaid" ColumnName="CardPaid" />
+          <ScalarProperty Name="CashPaid" ColumnName="CashPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableCategories">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.TableCategories">
+        <MappingFragment StoreEntitySet="TableCategories">
+          <ScalarProperty Name="TableCategorieId" ColumnName="TableCategorieId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TableCategorieName" ColumnName="TableCategorieName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Tables">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TableCategorieId" ColumnName="TableCategorieId" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableSalesHistory">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.TableSalesHistory">
+        <MappingFragment StoreEntitySet="TableSalesHistory">
+          <ScalarProperty Name="HistoryId" ColumnName="HistoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="OrderClosingDate" ColumnName="OrderClosingDate" />
+          <ScalarProperty Name="OrderStartingDate" ColumnName="OrderStartingDate" />
+          <ScalarProperty Name="PaymentCash" ColumnName="PaymentCash" />
+          <ScalarProperty Name="PaymentCard" ColumnName="PaymentCard" />
+          <ScalarProperty Name="PaymentDiscount" ColumnName="PaymentDiscount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RemainingUsageTime" ColumnName="RemainingUsageTime" />
+          <ScalarProperty Name="ConfirmCode" ColumnName="ConfirmCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waiters">
+      <EntityTypeMapping TypeName="BarcodeRestoDBModel.Waiters">
+        <MappingFragment StoreEntitySet="Waiters">
+          <ScalarProperty Name="WaiterId" ColumnName="WaiterId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

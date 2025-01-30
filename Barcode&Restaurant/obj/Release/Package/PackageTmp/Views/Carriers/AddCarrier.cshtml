@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Kurye EKle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AddEmployee.css" rel="stylesheet" />
+<main>
+    <div class="addEmployeeContainer">
+        <h3>Kurye Ekle</h3>
+        <form action="/Carriers/AddCarrierReq" method="post">
+            <div>
+                <label>İsim Soyisim</label>
+                <input autocomplete="off" required type="text" name="nameSurname" id="nameSurname" value="" />
+            </div>
+            <div>
+                <label>Kullanıcı Adı</label>
+                <input autocomplete="off" required type="text" name="username" value="" />
+            </div>
+            <div>
+                <label>Şifre</label>
+                <input autocomplete="off" required type="text" name="password" value="" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="Message">@ViewBag.Message</div>
+            }
+            <button type="submit">Ekle</button>
+        </form>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js">
+
+</script>
+<script src="~/Content/Assets/Scripts/Utils.js"></script>
+
+

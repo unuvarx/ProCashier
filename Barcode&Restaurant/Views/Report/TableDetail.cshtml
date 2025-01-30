@@ -1,0 +1,35 @@
+﻿@model Barcode_Restaurant.Models.TableSalesHistory
+@{
+    ViewBag.Title = "Masa Detayları";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+<link href="~/Content/Assets/Styles/ReportDetail.css" rel="stylesheet" />
+<main>
+    <div class="boxes">
+
+    </div>
+    <div class="detail-container">
+
+        <input type="hidden" name="ordersInput" value="@Model.Orders" />
+        <input type="hidden" name="paymentCash" value="@Model.PaymentCash" />
+        <input type="hidden" name="paymentCard" value="@Model.PaymentCard" />
+        
+
+        <div class="times">
+            <span>Açılış Tarihi: @Model.OrderStartingDate</span>
+            <span>Kapanış Tarihi: @Model.OrderClosingDate</span>
+        </div>
+
+        <div class="ordersContainer">
+            <h5>-ADİSYON-</h5>
+            <div class="orders">
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/ReportDetail.js"></script>

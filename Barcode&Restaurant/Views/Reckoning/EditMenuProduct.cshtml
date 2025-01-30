@@ -1,0 +1,37 @@
+﻿@model Barcode_Restaurant.Models.MenuProducts
+@{   
+    ViewBag.Title = "Menü Ürünü Güncelle";
+    Layout = "~/Views/Shared/_ReckoningLayout.cshtml";
+}
+
+
+
+<link href="~/Content/Assets/Styles/EditMenuProduct.css" rel="stylesheet" />
+
+<main>
+    <input type="hidden" name="ProductId" value="@Model.ProductId" />
+    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+    <div class="editProductContainer">
+        <form>
+            <div class="input">
+                <span>Ürün Adı</span>
+                <input required type="text" placeholder="Örn: Tavuk Döner" name="productName" value="@Model.ProductName" />
+            </div>
+            
+            
+            <div class="input">
+                <span>Ürün Fiyatı (₺)</span>
+                <input required type="text" name="productPrice" placeholder="Örn: 95" value="" />
+            </div>
+            <button type="submit" class="btn btn-secondary">Güncelle</button>
+        </form>
+    </div>
+
+</main>
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/Assets/Scripts/EditMenuProduct.js"></script>
+
+

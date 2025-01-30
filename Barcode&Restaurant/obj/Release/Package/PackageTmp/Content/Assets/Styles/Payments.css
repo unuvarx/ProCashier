@@ -1,0 +1,40 @@
+﻿img {
+    width: 7.5rem;
+    height: 10rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+img:hover {
+    transform: scale(1.2);
+}
+
+.checkInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
+}
+.rejectInput {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.checkInput input, .rejectInput input  {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    padding: 0.25rem;
+    outline: none;
+}
+    .checkInput button, .rejectInput button {
+        padding: 0.25rem;
+        border: none;
+        color: #fff;
+    }
+.checkInput button {
+    background-color: green;
+}
+.rejectInput button {
+    background-color: red;
+}

@@ -1,0 +1,223 @@
+﻿
+@{
+    ViewBag.Title = "Printer";
+    Layout = "~/Views/Shared/_UsersLayout.cshtml";
+}
+
+
+<link href="~/Content/Assets/Styles/Printer.css" rel="stylesheet" />
+<main>
+    <h5> Bu programda " ZJIANG ZJ-5890k " termal yazıcı modeli kullanılmaktadır.  </h5>
+    <h3>- KURULUM ADIMLARI - </h3>
+    <div class="stageContainer">
+        <div class="stage1">
+            <label>Adım - 1</label>
+            <a id="downloadLink" href="@Url.Action("DownloadDriver", "User", new { fileName = "Driver.exe" })">İlk olarak bu linkten Driver.exe dosyasını indirmelisiniz.</a>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage2">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage2.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 2</label>
+                <span> İndirilenler bölümünden Driver dosyasına çift tıklayarak açıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage3">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage3.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 3</label>
+                <span> Açılan sayfada "Next" butonuna tıklıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage4">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage4.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 4</label>
+                <span> Açılan sayfada "I accept the agreement" seçeneğini işaretliyip "Next" butonuna basıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage5">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage5.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 5</label>
+                <span>  Açılan sayfada "Next" seçeneğine tıklıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage6">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage6.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 6</label>
+                <span>  Açılan sayfada "Install" seçeneğine tıklıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage7">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage7.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 7</label>
+                <span>  Açılan sayfada önce işletim sistemimizi seçiyoruz. <br /> Daha sonra yazıcımızı yukarıda belirttiğimiz gibi seçiyoruz.  <br /> Ardından, "Ports" bölümünden "USB001" seçeneğini seçiyoruz. <br />Son olarak, "Begin Setup" butonuna basıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage8">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage8.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 8</label>
+                <span>  Açılan sayfaya yazıcı adımızınz "ZJ-58" olduğuna emin oluyoruz ve üst bölümden "Bağlantı Noktaları" butonuna basıyoruz. </span>
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="stage9">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage9.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 9</label>
+                <span>
+                    Açılan sayfada "UnknownPrinter" seçeneğini seçiyoruz ve ardından "Uygula" butonuna basıyoruz. <br />
+                    Son olarak "Tamam" butonuna basarak kurulumu tamamlıyoruz. <br /> Eğer USB002 yoksa mevcut USB bağlantı noktalarınızla 'GENEL' sekmesinden bir sınama sayfası yazdırın. <br /> Eğer yazdırabiliyorsanız bu bağlantı noktasını kullanabilirsiniz.
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage10 text-center">
+            <label>Adım - 10</label>
+            <a id="downloadLink" href="@Url.Action("DownloadDriver", "User", new { fileName = "ProCashierService.msi" })">Şimdi ise bu linkten ProCashierService.msi dosyasını indiriyoruz.</a>
+        </div>
+        <div class="hr"></div>
+        <div class="stage11">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage11.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 11</label>
+                <span>
+                    'İndirililenler' klasöründen ProCashierService.msi dosyasına çift tıklayarak açıyoruz. 
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage12">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage12.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 12</label>
+                <span>
+                    Eğer "Windows koruma" penceresi açılırsa "Daha fazla bilgi" seçeneğine tıklayıp "Yinede Çalıştır" butonuna basıyoruz. <br />
+                    Ardından "Next" butonuna basıyoruz. 
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage13">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage13.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 13</label>
+                <span>
+                    Hiçbirşeye dokunmadan yine 'Next' butonuna basıyoruz.
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage14">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage14.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 14</label>
+                <span>
+                    Yine hiçbirşeye dokunmadan 'Next' butonuna basıyoruz.
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage15">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage15.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 15</label>
+                <span>
+                    Kurulum tamamlandı. Daha sonra 'Close' butonuna basıyoruz.
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage16">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage16.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 16</label>
+                <span>
+                    Şimdi ise kontrol amaçlı kurduğumuz programı çalıştıracağız. <br />
+                    Başlat menüsünden "Hizmetler" programını aratıyoruz ve çıkan programı açıyoruz. <br />
+                  
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage17">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage17.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 17</label>
+                <span>
+                    Açılan 'Hizmetler' programında 'ProCashierService' hizmetini buluyoruz ve ok ile belirtilen başlat seçeneğine tıklıyoruz veya <br /> sağ tıklayıp 'Başlat' seçeneğine tıklıyoruz. <br />
+                    Bu hizmeti kolay bulmak için yukarıdan 'Ad' butonuna basıp daha kolay bulabilirsiniz.
+                </span>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="stage18">
+            <div class="img">
+                <img src="~/Content/Assets/Images/PrinterImages/stage18.png" alt="Alternate Text" />
+            </div>
+            <div>
+                <label>Adım - 18</label>
+                <span>
+                   Eğer hizmetimizin üzerinde 'Çalışıyor' yazıyorsa,<br /> kurulum başarıyla tamamlanmış ve yazıcımızı kullanmaya hazırız demektir. <br />
+                </span>
+            </div>
+        </div>
+    </div>
+</main>
+

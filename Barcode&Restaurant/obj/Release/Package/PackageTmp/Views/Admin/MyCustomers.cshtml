@@ -1,0 +1,45 @@
+﻿@model List<Barcode_Restaurant.Models.MyCustomers>
+@{
+    ViewBag.Title = "MyCustomers";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link href="~/Content/Assets/Styles/AdminAddPacket.css" rel="stylesheet" />
+<main>
+    <h2>Müşterilerimiz</h2>
+    <a class="btn btn-primary" href="/Admin/AddMyCustomer"> Müşteri Ekle </a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Müşteri Adı</th>
+                <th scope="col"> Görsel</th>
+                <th scope="col">Sil</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CustomerName</td>
+                        <td> <img src="@item.CustomerImg" class="customerImg" alt="Alternate Text" /> </td>
+                        <td>
+                            <form id="deleteCustomerForm" action="/Admin/DeleteMyCustomer" method="post">
+
+                                <input type="hidden" name="customerId" value="@item.CustomerId" />
+                                <button type="submit">Sil</button>
+                            </form>
+
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</main>
+
+
